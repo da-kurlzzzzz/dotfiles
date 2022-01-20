@@ -1,6 +1,7 @@
 source $VIMRUNTIME/defaults.vim
 
 set scrolloff=1
+nnoremap Y y$
 
 set whichwrap=b,s,h,l,<,>,~,[,]
 set number
@@ -25,7 +26,6 @@ let &t_SI="\e[6 q"
 let &t_EI="\e[2 q"
 set background=dark
 
-nnoremap Y y$
 nnoremap <silent> <Leader>/ :nohlsearch<CR>
 nnoremap <silent> <Leader>w :execute 'silent write !sudo tee % >/dev/null' <bar> edit!<CR>
 nnoremap <silent> <Leader>t :execute 'terminal' <bar> execute 'set nonumber'<CR>
