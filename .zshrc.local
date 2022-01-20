@@ -7,7 +7,7 @@ alias dots='/usr/bin/git --git-dir=/mnt/slow/dotfiles.git --work-tree=$HOME'
 
 eval "$(dircolors ${HOME}/.dircolors)"
 
-PATH="${HOME}/bin:${PATH}"
+PATH="${HOME}/bin:${HOME}/.local/bin:${PATH}"
 
 export MANPAGER="vim +MANPAGER -c 'setlocal nonumber' -"
 
