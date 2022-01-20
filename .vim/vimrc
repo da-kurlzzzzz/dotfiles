@@ -37,7 +37,7 @@ nnoremap <C-L> <C-W><C-L>
 inoremap <Space> <C-G>u<Space>
 inoremap <CR> <C-G>u<CR>
 
-set keymap=russian-jcuken
+set keymap=russian-jcukenwin
 set iminsert=0
 
 let g:netrw_banner=0
