@@ -1,0 +1,43 @@
+source $VIMRUNTIME/defaults.vim
+
+set scrolloff=1
+
+set whichwrap=b,s,h,l,<,>,~,[,]
+set number
+set hlsearch
+set splitbelow splitright laststatus=2
+
+set expandtab shiftround tabstop=4 shiftwidth=0 softtabstop=-1 autoindent smartindent
+
+set ignorecase smartcase
+set wildmode=longest:full,full
+set wildignorecase
+
+runtime ftplugin/man.vim
+set keywordprg=:Man
+
+set tags+=~/.vim/tags
+
+set undodir=~/.vim/undo
+set undofile
+
+let &t_SI="\e[6 q"
+let &t_EI="\e[2 q"
+set background=dark
+
+nnoremap Y y$
+nnoremap <silent> <Leader>/ :nohlsearch<CR>
+nnoremap <silent> <Leader>w :execute 'silent write !sudo tee % >/dev/null' <bar> edit!<CR>
+nnoremap <silent> <Leader>t :execute 'terminal' <bar> execute 'set nonumber'<CR>
+nnoremap <silent> <Leader>n :32Lexplore<CR>
+nnoremap <C-H> <C-W><C-H>
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+inoremap <Space> <C-G>u<Space>
+inoremap <CR> <C-G>u<CR>
+
+let g:netrw_banner=0
+let g:netrw_liststyle=3
+" let g:netrw_bufsettings='noma nomod nonu nowrap ro nobl'
+  let g:netrw_bufsettings='noma nomod nu   nowrap ro nobl'
