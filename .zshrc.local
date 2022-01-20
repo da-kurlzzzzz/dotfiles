@@ -3,6 +3,7 @@ zstyle ':prompt:grml:left:items:path' token '%2~ '
 alias ll='ls --group-directories-first -ohA'
 alias watch='watch '
 alias xclip='xclip -rmlastnl -selection clipboard'
+alias dots='/usr/bin/git --git-dir=/mnt/slow/dotfiles.git --work-tree=$HOME'
 
 eval "$(dircolors ${HOME}/.dircolors)"
 
