@@ -28,7 +28,7 @@ set background=dark
 
 nnoremap <silent> <Leader>/ :nohlsearch<CR>
 nnoremap <silent> <Leader>w :execute 'silent write !sudo tee % >/dev/null' <bar> edit!<CR>
-nnoremap <silent> <Leader>t :execute 'terminal' <bar> execute 'set nonumber'<CR>
+nnoremap <silent> <Leader>t :execute 'terminal' <bar> execute 'setlocal nonumber'<CR>
 nnoremap <silent> <Leader>n :32Lexplore<CR>
 nnoremap <C-H> <C-W><C-H>
 nnoremap <C-J> <C-W><C-J>
