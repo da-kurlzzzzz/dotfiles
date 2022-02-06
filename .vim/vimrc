@@ -1,42 +1,63 @@
+" should be default
 source $VIMRUNTIME/defaults.vim
 
+" changes to defaults
 set scrolloff=1
 nnoremap Y y$
 
+" interface things
+" wrap everywhere
 set whichwrap=b,s,h,l,<,>,~,[,]
 set number
 set hlsearch
+" this just feels more natural
 set splitbelow splitright laststatus=2
 
+" warning: spaces person
+" also, shiftwidth and softtabstop use neat tricks to keep them equal to
+" tabstop.  See :help
 set expandtab shiftround tabstop=4 shiftwidth=0 softtabstop=-1 autoindent smartindent
 
+" wildmode: tab completes, second tab opens wildmenu
 set ignorecase smartcase
 set wildmode=longest:full,full
 set wildignorecase
 
+" much better than less
 runtime ftplugin/man.vim
 set keywordprg=:Man
 
+" see man ctags
 set tags+=~/.vim/tags
 
+" persistent undo feels good
 set undodir=~/.vim/undo
 set undofile
 
+" tricks for cursor shape and tmux colors
 let &t_SI="\e[6 q"
 let &t_EI="\e[2 q"
 set background=dark
 
 nnoremap <silent> <Leader>/ :nohlsearch<CR>
+" force write trick
 nnoremap <silent> <Leader>w :execute 'silent write !sudo tee % >/dev/null' <bar> edit!<CR>
+" added before started using tmux, might delete later
 nnoremap <silent> <Leader>t :execute 'terminal' <bar> execute 'setlocal nonumber'<CR>
+" sometimes netrw can be useful
 nnoremap <silent> <Leader>n :32Lexplore<CR>
+
+" makes navigation easier
 nnoremap <C-H> <C-W><C-H>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
+
+" per word undo
 inoremap <Space> <C-G>u<Space>
 inoremap <CR> <C-G>u<CR>
 
+" it is surprisingly useful sometimes
 set keymap=russian-jcukenwin
 set iminsert=0
 
