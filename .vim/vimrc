@@ -30,6 +30,9 @@ set keywordprg=:Man
 " see man ctags
 set tags+=~/.vim/tags
 
+" silent make
+set makeprg=make\ -s
+
 " persistent undo feels good
 set undodir=~/.vim/undo
 set undofile
