@@ -44,6 +44,7 @@ set undodir=~/.vim/undo
 set undofile
 
 " tricks for cursor shape and tmux colors
+set ttymouse=xterm2
 let &t_SI="\e[6 q"
 let &t_EI="\e[2 q"
 set background=dark
