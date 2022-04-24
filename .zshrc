@@ -18,6 +18,7 @@ alias dots='/usr/bin/git --git-dir=/mnt/slow/dotfiles.git --work-tree=$HOME'
 
 DIRCOLORS="${HOME}/.dircolors"
 test -r $DIRCOLORS && eval "$(dircolors $DIRCOLORS)"
+unset DIRCOLORS
 
 # my binaries and python local files
 PATH="${HOME}/bin:${HOME}/.local/bin:${PATH}"
@@ -30,6 +31,8 @@ setopt nullglob
 
 VIMODE_FILE="/usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh"
 test -r $VIMODE_FILE && source $VIMODE_FILE
+unset VIMODE_FILE
 
 NOTFOUND_FILE="/usr/share/doc/pkgfile/command-not-found.zsh"
 test -r $NOTFOUND_FILE && source $NOTFOUND_FILE
+unset NOTFOUND_FILE
