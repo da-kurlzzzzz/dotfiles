@@ -3,6 +3,7 @@ source $VIMRUNTIME/defaults.vim
 
 " changes to defaults
 set scrolloff=1
+augroup vimHints | exe 'au!' | augroup END
 nnoremap Y y$
 
 " interface things
