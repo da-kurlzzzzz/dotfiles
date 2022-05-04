@@ -10,7 +10,7 @@ zstyle ':prompt:grml:left:items:path' token '%2~ '
 
 alias ll='ls --group-directories-first -ohA'
 # auto cd to ranger directory
-alias ranger='. ranger'
+alias r='. ranger'
 # this is just to be able to
 # $ watch ll
 alias watch='watch '
