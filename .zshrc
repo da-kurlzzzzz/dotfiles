@@ -16,7 +16,7 @@ alias r='. ranger'
 alias watch='watch '
 alias xclip='xclip -rmlastnl -selection clipboard'
 # idk how to not use an absolute path here
-alias dots='/usr/bin/git --git-dir=/mnt/slow/dotfiles.git --work-tree=$HOME'
+alias dots='/usr/bin/git --git-dir=$HOME/dotfiles.git --work-tree=$HOME'
 
 DIRCOLORS="${HOME}/.dircolors"
 test -r $DIRCOLORS && eval "$(dircolors $DIRCOLORS)"
