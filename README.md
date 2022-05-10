@@ -12,5 +12,6 @@ vim it's only `vim-ranger`
     git --git-dir=$HOME/dotfiles.git --work-tree=$HOME checkout --force
     # reload shell and alias `dots' will be available
     dots config status.showUntrackedFiles no
+    git push --set-upstream origin main # because repo cloned as bare
 
 <!-- vim:set tw=78: -->
