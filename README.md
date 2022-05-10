@@ -10,7 +10,7 @@ vim it's only `vim-ranger`
     cd $HOME
     git clone --bare https://github.com/da-kurlzzzzz/dotfiles
     git --git-dir=$HOME/dotfiles.git --work-tree=$HOME checkout --force
-    # reload shell and alias `dots' will be available
+    source $HOME/.zshrc # reload shell and alias `dots' will be available
     dots config status.showUntrackedFiles no
     dots push --set-upstream origin main # because repo cloned as bare
 
