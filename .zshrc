@@ -15,7 +15,7 @@ alias r='. ranger'
 # $ watch ll
 alias watch='watch '
 alias xclip='xclip -rmlastnl -selection clipboard'
-# idk how to not use an absolute path here
+# figured that would be an easy way
 alias dots='/usr/bin/git --git-dir=$HOME/dotfiles.git --work-tree=$HOME'
 
 DIRCOLORS="${HOME}/.dircolors"
