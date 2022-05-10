@@ -17,6 +17,6 @@ Run
 And then
 
     dots config status.showUntrackedFiles no
-    dots push --set-upstream origin main # because repo cloned as bare
+    dots config push.default upstream # because repo cloned as bare
 
 <!-- vim:set tw=78: -->
