@@ -1,0 +1,9 @@
+[user]
+	email = da_kurlzzzzz@mail.ru
+	name = kevin
+[credential]
+	helper = store
+[init]
+	defaultBranch = main
+[alias]
+	adog = log --all --decorate --oneline --graph
