@@ -1,0 +1,12 @@
+*
+
+!/.config/i3/config
+!/.config/i3status/config
+!/.gitconfig
+!/.tmux.conf
+!/.vim/vimrc
+!/.xinitrc
+!/.zshrc
+!/LICENSE
+!/README.md
+!/.gitignore
