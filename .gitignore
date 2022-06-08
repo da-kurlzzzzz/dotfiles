@@ -5,6 +5,7 @@
 !/.gitconfig
 !/.tmux.conf
 !/.vim/vimrc
+!/.vim/skel/
 !/.xinitrc
 !/.zshrc
 !/LICENSE

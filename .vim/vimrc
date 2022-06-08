@@ -68,6 +68,13 @@ nnoremap <C-L> <C-W><C-L>
 inoremap <Space> <C-G>u<Space>
 inoremap <CR> <C-G>u<CR>
 
+" skeleton files
+if !isdirectory($HOME."/.vim/skel")
+    call mkdir($HOME."/.vim/skel", "", 0755)
+endif
+autocmd BufNewFile *.c r ~/.vim/skel/main.c | 0delete
+autocmd BufNewFile *.md r ~/.vim/skel/doc.md | 0delete
+
 " it is surprisingly useful sometimes
 set keymap=russian-jcukenwin
 set iminsert=0
