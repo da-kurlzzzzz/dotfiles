@@ -27,7 +27,7 @@ unset DIRCOLORS
 PATH="${HOME}/bin:${HOME}/.local/bin:${PATH}"
 
 # refer to vim :help manpager.vim
-export MANPAGER="vim +MANPAGER -c 'setlocal nonumber' -"
+export MANPAGER="vim --not-a-term +MANPAGER -c 'setlocal nonumber' -"
 
 setopt globstarshort
 setopt nullglob
