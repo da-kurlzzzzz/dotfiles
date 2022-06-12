@@ -74,6 +74,7 @@ if !isdirectory($HOME."/.vim/skel")
 endif
 autocmd BufNewFile *.c r ~/.vim/skel/main.c | 0delete
 autocmd BufNewFile *.md r ~/.vim/skel/doc.md | 0delete
+autocmd BufNewFile *.html r ~/.vim/skel/index.html | 0delete
 
 " it is surprisingly useful sometimes
 set keymap=russian-jcukenwin
