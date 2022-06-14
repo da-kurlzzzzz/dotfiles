@@ -68,6 +68,12 @@ nnoremap <C-L> <C-W><C-L>
 inoremap <Space> <C-G>u<Space>
 inoremap <CR> <C-G>u<CR>
 
+" swap meaning of : and ;
+nmap ; :
+xmap ; :
+nnoremap ;; ;
+xnoremap ;; ;
+
 " skeleton files
 if !isdirectory($HOME."/.vim/skel")
     call mkdir($HOME."/.vim/skel", "", 0755)
