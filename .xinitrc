@@ -37,5 +37,9 @@ xinput set-prop "Elan Touchpad" "libinput Tapping Enabled" 1
 # Caps Lock is useless
 setxkbmap -option caps:escape
 
+# Keyboard layouts
+setxkbmap -layout us,ru
+setxkbmap -option grp:shifts_toggle
+
 # happy ending
 exec i3
