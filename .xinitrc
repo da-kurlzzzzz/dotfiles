@@ -41,5 +41,8 @@ setxkbmap -option caps:escape
 setxkbmap -layout us,ru
 setxkbmap -option grp:shifts_toggle
 
+# automounting
+udiskie &
+
 # happy ending
 exec i3
