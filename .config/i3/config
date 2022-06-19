@@ -155,3 +155,5 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 }
+
+bindsym --release Print exec --no-startup-id import png:- | xclip -selection clipboard -t image/png
