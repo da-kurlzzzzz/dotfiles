@@ -44,5 +44,8 @@ setxkbmap -option grp:shifts_toggle
 # automounting
 udiskie &
 
+# turn on my adapter
+bluetoothctl power on &
+
 # happy ending
 exec i3
