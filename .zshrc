@@ -19,8 +19,6 @@ alias r='. ranger'
 # $ watch ll
 alias watch='watch '
 alias xclip='xclip -rmlastnl -selection clipboard'
-# figured that would be an easy way
-alias dots='/usr/bin/git --git-dir=$HOME/dotfiles.git --work-tree=$HOME'
 alias pip_upgrade='pip list --outdated --format=freeze | cut -d= -f1 | xargs pip install -U'
 
 DIRCOLORS="${HOME}/.dircolors"
