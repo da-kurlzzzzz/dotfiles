@@ -48,5 +48,8 @@ udiskie &
 # turn on my adapter
 bluetoothctl power on &
 
+# screen must be on
+xset s off -dpms &
+
 # happy ending
 exec i3
