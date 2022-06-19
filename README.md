@@ -10,12 +10,9 @@ vim it's only `vim-ranger`
 Run
 
     cd $HOME
-    git clone --bare https://github.com/da-kurlzzzzz/dotfiles
-    git --git-dir=$HOME/dotfiles.git --work-tree=$HOME checkout --force
-    source $HOME/.zshrc # reload shell and alias `dots' will be available
-
-And then
-
-    dots config push.default upstream # because repo cloned as bare
+    git init
+    git remote add origin https://github.com/da-kurlzzzzz/dotfiles
+    git fetch
+    git checkout -t origin/main # optionally add -f to overwrite
 
 <!-- vim:set tw=78: -->
