@@ -40,6 +40,7 @@ setxkbmap -option caps:escape
 # Keyboard layouts
 setxkbmap -layout us,ru
 setxkbmap -option grp:shifts_toggle
+setxkbmap -option grp_led:caps
 
 # automounting
 udiskie &
