@@ -41,9 +41,8 @@ load {
 }
 
 memory {
-        format = "%used | %available"
-        threshold_degraded = "1G"
-        format_degraded = "MEMORY < %available"
+        memory_used_method = memavailable
+        format = "%used / %total"
 }
 
 time {
