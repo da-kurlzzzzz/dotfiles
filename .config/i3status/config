@@ -8,7 +8,7 @@
 
 general {
         colors = true
-        interval = 5
+        interval = 1
 }
 
 order += "volume master"
@@ -17,7 +17,7 @@ order += "battery all"
 order += "disk /"
 order += "load"
 order += "memory"
-order += "tztime local"
+order += "time"
 
 volume master {
 }
@@ -45,6 +45,6 @@ memory {
         format_degraded = "MEMORY < %available"
 }
 
-tztime local {
-        format = "%Y-%m-%d %H:%M"
+time {
+        format = "%Y-%m-%d %H:%M:%S"
 }
