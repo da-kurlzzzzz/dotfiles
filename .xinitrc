@@ -51,5 +51,8 @@ bluetoothctl power on &
 # screen must be on
 xset s off -dpms &
 
+# torrent client
+transmission-gtk --minimized &
+
 # happy ending
 exec i3
