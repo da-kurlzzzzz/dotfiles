@@ -51,6 +51,9 @@ bluetoothctl power on &
 # screen must be on
 xset s off -dpms &
 
+# strange bell is now off
+xset -b
+
 # torrent client
 transmission-gtk --minimized &
 
