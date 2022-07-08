@@ -34,6 +34,9 @@ fi
 # hate to force the touchpad
 xinput set-prop "Elan Touchpad" "libinput Tapping Enabled" 1
 
+# reverse scroll direction to usual
+xinput set-prop "Elan Touchpad" "libinput Natural Scrolling Enabled" 1
+
 # Caps Lock is useless
 setxkbmap -option caps:escape
 
