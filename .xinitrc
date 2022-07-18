@@ -57,8 +57,5 @@ xset s off -dpms &
 # strange bell is now off
 xset -b
 
-# torrent client
-transmission-gtk --minimized &
-
 # happy ending
 exec i3
