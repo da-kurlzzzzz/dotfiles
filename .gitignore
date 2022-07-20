@@ -7,6 +7,8 @@
 !/.config/i3status/**
 !/.config/htop
 !/.config/htop/**
+!/.config/alacritty
+!/.config/alacritty/**
 !/.gitconfig
 !/.tmux.conf
 !/.vim/
