@@ -8,7 +8,7 @@
 !/.config/htop
 !/.config/htop/**
 !/.config/alacritty
-!/.config/alacritty/**
+!/.config/alacritty/alacritty.yml
 !/.gitconfig
 !/.tmux.conf
 !/.vim/
