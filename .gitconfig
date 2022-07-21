@@ -7,3 +7,6 @@
 	defaultBranch = main
 [alias]
 	adog = log --all --decorate --oneline --graph
+[filter "removePassword"]
+	smudge = .helpers/smudge.sh
+	clear = .helpers/clear.sh

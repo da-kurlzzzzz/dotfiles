@@ -23,3 +23,7 @@
 !/LICENSE
 !/README.md
 !/.gitignore
+!/.gitattributes
+!/.helpers/
+!/.helpers/smudge.sh
+!/.helpers/clean.sh
