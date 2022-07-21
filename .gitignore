@@ -10,7 +10,7 @@
 !/.config/yay
 !/.config/yay/**
 !/.config/transmission-daemon
-!/.config/transmission-daemon/**
+!/.config/transmission-daemon/settings.json
 !/.config/alacritty
 !/.config/alacritty/alacritty.yml
 !/.gitconfig
