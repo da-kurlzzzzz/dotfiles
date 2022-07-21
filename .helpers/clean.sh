@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SAVEFILE="password.txt"
+SAVEFILE=".helpers/password.txt"
 if ! test -f $SAVEFILE; then
     touch $SAVEFILE
 fi
