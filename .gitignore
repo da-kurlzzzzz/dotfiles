@@ -9,6 +9,8 @@
 !/.config/htop/**
 !/.config/yay
 !/.config/yay/**
+!/.config/ranger
+!/.config/ranger/**
 !/.config/transmission-daemon
 !/.config/transmission-daemon/settings.json
 !/.config/alacritty
