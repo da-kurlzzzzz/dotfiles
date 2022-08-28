@@ -1,9 +1,17 @@
 # dotfiles
 
 These are just simple dotfiles for my Arch Linux installation.  They *should*
-work on other distros, but your mileage may wary.  For zsh my plugins are
-`grml-zsh-config`, `zsh-vi-mode` and `command-not-found` from `pkgfile`. For
-vim it's only `vim-ranger`
+work on other distros, but your mileage may wary.
+
+# Plugins
+
+For zsh my plugins are `grml-zsh-config`, `zsh-vi-mode` and
+`command-not-found` from `pkgfile`.
+
+For vim it's `vim-ranger` `vim-ansiesc` and `vim-sensible`.
+
+For tmux there is `tmux-plugin-manager-git` which manages `tmux-copycat` and
+`tmux-sensible`
 
 # Installation
 
