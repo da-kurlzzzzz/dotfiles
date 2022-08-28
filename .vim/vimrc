@@ -2,7 +2,6 @@
 source $VIMRUNTIME/defaults.vim
 
 " changes to defaults
-set scrolloff=1
 augroup vimHints | exe 'au!' | augroup END
 nnoremap Y y$
 
@@ -12,12 +11,12 @@ set whichwrap=b,s,h,l,<,>,~,[,]
 set number
 set hlsearch
 " this just feels more natural
-set splitbelow splitright laststatus=2
+set splitbelow splitright
 
 " warning: spaces person
 " also, shiftwidth and softtabstop use neat tricks to keep them equal to
 " tabstop.  See :help
-set expandtab shiftround tabstop=4 shiftwidth=0 softtabstop=-1 autoindent smartindent
+set expandtab shiftround tabstop=4 shiftwidth=0 softtabstop=-1 smartindent
 
 " wildmode: tab completes, second tab opens wildmenu
 set ignorecase smartcase
