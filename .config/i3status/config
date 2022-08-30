@@ -25,7 +25,7 @@ volume master {
 
 wireless _first_ {
         format_up = "W: (%quality at %essid) %ip"
-        format_down = "W: down"
+        format_down = ""
 }
 
 battery all {
