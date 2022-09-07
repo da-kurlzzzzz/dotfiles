@@ -22,6 +22,8 @@ alias xclip='xclip -rmlastnl -selection clipboard'
 alias pip_upgrade='pip list --outdated --format=freeze | cut -d= -f1 | xargs pip install -U'
 alias uu='udiskie-umount -fd'
 alias sudo='sudo '
+alias sc='systemctl'
+alias blc='bluetoothctl'
 
 DIRCOLORS="${HOME}/.dircolors"
 test -r $DIRCOLORS && eval "$(dircolors $DIRCOLORS)"
