@@ -25,6 +25,7 @@ alias sudo='sudo '
 alias sc='systemctl'
 alias blc='bluetoothctl'
 alias feh='feh -.'
+alias trr='transmission-remote'
 
 DIRCOLORS="${HOME}/.dircolors"
 test -r $DIRCOLORS && eval "$(dircolors $DIRCOLORS)"
