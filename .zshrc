@@ -24,6 +24,7 @@ alias uu='udiskie-umount -fd'
 alias sudo='sudo '
 alias sc='systemctl'
 alias blc='bluetoothctl'
+alias feh='feh -.'
 
 DIRCOLORS="${HOME}/.dircolors"
 test -r $DIRCOLORS && eval "$(dircolors $DIRCOLORS)"
