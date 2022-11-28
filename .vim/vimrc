@@ -81,6 +81,7 @@ autocmd BufNewFile *.c r ~/.vim/skel/main.c | 0delete
 autocmd BufNewFile *.md r ~/.vim/skel/doc.md | 0delete
 autocmd BufNewFile *.html r ~/.vim/skel/index.html | 0delete
 autocmd BufNewFile *.py r ~/.vim/skel/main.py | 0delete
+autocmd BufNewFile *.cpp r ~/.vim/skel/main.cpp | 0delete
 
 " it is surprisingly useful sometimes
 set keymap=russian-jcukenwin
