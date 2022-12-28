@@ -57,5 +57,8 @@ xset s off -dpms &
 # strange bell is now off
 xset -b
 
+# hide cursor when it is not needed
+unclutter &
+
 # happy ending
 exec i3
