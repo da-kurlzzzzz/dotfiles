@@ -20,6 +20,7 @@
 !/.vim/
 !/.vim/vimrc
 !/.vim/skel/
+!/.vim/skel/*
 !/.xinitrc
 !/.zshrc
 !/LICENSE
