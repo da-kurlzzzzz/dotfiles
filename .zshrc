@@ -37,6 +37,8 @@ setopt globstarshort
 setopt nullglob
 
 VIMODE_FILE="/usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh"
+ZVM_KEYTIMEOUT=0
+ZVM_ESCAPE_KEYTIMEOUT=0
 test -r $VIMODE_FILE && source $VIMODE_FILE
 unset VIMODE_FILE
 
