@@ -8,7 +8,7 @@ nnoremap Y y$
 " interface things
 " wrap everywhere
 set whichwrap=b,s,h,l,<,>,~,[,]
-set number
+set number relativenumber
 set hlsearch
 " this just feels more natural
 set splitbelow splitright
