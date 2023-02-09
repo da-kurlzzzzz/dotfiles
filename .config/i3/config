@@ -158,7 +158,7 @@ bar {
 }
 
 bindsym --release Print exec --no-startup-id import png:- | xclip -selection clipboard -t image/png
-bindsym --release Alt_R exec --no-startup-id import -window $(i3-msg -t get_tree | jq 'recurse(.nodes[]) | select(.focused).window') png:- | xclip -selection clipboard -t image/png
+bindsym --release Alt_R exec --no-startup-id "import -window $(i3-msg -t get_tree | jq 'recurse((.nodes, .floating_nodes)[]) | select(.focused).window') png:- | xclip -selection clipboard -t image/png"
 bindsym XF86Calculator exec qalculate-gtk
 for_window [title="Qalculate!"] floating enable
 
