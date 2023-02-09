@@ -59,3 +59,4 @@ export LESSHISTFILE="$XDG_CACHE_HOME/less/history"
 # export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
 compinit -d "$XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION"
 export HISTFILE="$XDG_STATE_HOME/zsh/history"
+test -d $(dirname $HISTFILE) || mkdir -p $(dirname $HISTFILE)
