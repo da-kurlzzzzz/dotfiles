@@ -159,7 +159,16 @@ bar {
 
 bindsym --release Print exec --no-startup-id import png:- | xclip -selection clipboard -t image/png
 bindsym --release Alt_R exec --no-startup-id "import -window $(i3-msg -t get_tree | jq 'recurse((.nodes, .floating_nodes)[]) | select(.focused).window') png:- | xclip -selection clipboard -t image/png"
-bindsym XF86Calculator exec qalculate-gtk
+
+bindsym F1 exec qalculate-gtk
 for_window [title="Qalculate!"] floating enable
+# F2 is for excel
+bindsym F3 exec firefox
+bindsym F4 exec discord
+# F5 to reload in browser
+# F6 to edit address in browser
+bindsym F7 exec ~/.local/bin/toggle-headphones.sh
+# F8 - F11 are free real estate
+# F12 to open dev console in browser
 
 focus_follows_mouse no
