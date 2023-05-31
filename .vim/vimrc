@@ -49,6 +49,8 @@ let &t_SI="\e[6 q"
 let &t_EI="\e[2 q"
 set background=dark
 
+nnoremap <SPACE> <Nop>
+let mapleader=" "
 nnoremap <silent> <Leader>/ :nohlsearch<CR>
 " force write trick
 nnoremap <silent> <Leader>w :execute 'silent write !sudo tee % >/dev/null' <bar> edit!<CR>
