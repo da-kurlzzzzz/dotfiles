@@ -74,14 +74,12 @@ nnoremap ;; ;
 xnoremap ;; ;
 
 " skeleton files
-if !isdirectory($HOME."/.vim/skel")
-    call mkdir($HOME."/.vim/skel", "", 0755)
+let SKELDIR = $HOME."/.vim/skel"
+if !isdirectory(SKELDIR)
+    call mkdir(SKELDIR, "", 0755)
 endif
-autocmd BufNewFile *.c r ~/.vim/skel/main.c | 0delete
-autocmd BufNewFile *.md r ~/.vim/skel/doc.md | 0delete
-autocmd BufNewFile *.html r ~/.vim/skel/index.html | 0delete
-autocmd BufNewFile *.py r ~/.vim/skel/main.py | 0delete
-autocmd BufNewFile *.cpp r ~/.vim/skel/main.cpp | 0delete
+autocmd BufNewFile * :silent! exec ":r ".SKELDIR."/".&filetype | 0delete
+set cpoptions-=a
 
 " it is surprisingly useful sometimes
 set keymap=russian-jcukenwin
