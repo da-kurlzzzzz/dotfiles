@@ -40,12 +40,19 @@ xinput set-prop "$TOUCHPAD" "libinput Tapping Enabled" 1
 xinput set-prop "$TOUCHPAD" "libinput Natural Scrolling Enabled" 1
 
 # Caps Lock is useless
-setxkbmap -option caps:escape
-
+# setxkbmap -option caps:escape
 # Keyboard layouts
-setxkbmap -layout us,ru
-setxkbmap -option grp:shifts_toggle
-setxkbmap -option grp_led:caps
+# setxkbmap -layout us,ru
+# setxkbmap -option grp:shifts_toggle
+# setxkbmap -option grp_led:caps
+# I am very angry so I'll leave it here:
+# /etc/X11/xorg.conf.d/00-keyboard.conf
+# Section "InputClass"
+# Identifier "system-keyboard"
+# MatchIsKeyboard "on"
+# Option "XkbLayout" "us,ru"
+# Option "XkbOptions" "grp:shifts_toggle,grp_led:caps,caps:escape"
+# EndSection
 
 # automounting
 udiskie &
