@@ -22,6 +22,7 @@ alias sc='systemctl'
 alias blc='bluetoothctl'
 alias feh='feh -.'
 alias trr='transmission-remote'
+alias trans='bash /usr/bin/trans'
 
 DIRCOLORS="${HOME}/.dircolors"
 test -r $DIRCOLORS && eval "$(dircolors $DIRCOLORS)"
