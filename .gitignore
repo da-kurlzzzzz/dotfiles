@@ -31,3 +31,4 @@
 !/.helpers/smudge.sh
 !/.helpers/clean.sh
 !/.gdbinit
+!/.gdbearlyinit
