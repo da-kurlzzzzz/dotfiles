@@ -47,17 +47,3 @@ unset VIMODE_FILE
 NOTFOUND_FILE="/usr/share/doc/pkgfile/command-not-found.zsh"
 test -r $NOTFOUND_FILE && source $NOTFOUND_FILE
 unset NOTFOUND_FILE
-
-# xdg-ninja stuff
-export XDG_DATA_HOME="$HOME/.local/share"
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_STATE_HOME="$HOME/.local/state"
-export XDG_CACHE_HOME="$HOME/.cache"
-
-export ELECTRUMDIR="$XDG_DATA_HOME/electrum"
-export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
-export LESSHISTFILE="$XDG_CACHE_HOME/less/history"
-# export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
-compinit -d "$XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION"
-export HISTFILE="$XDG_STATE_HOME/zsh/history"
-test -d $(dirname $HISTFILE) || mkdir -p $(dirname $HISTFILE)
