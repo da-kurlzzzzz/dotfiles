@@ -177,3 +177,5 @@ bindsym F7 exec ~/.local/bin/toggle-headphones.sh
 # F12 to open dev console in browser
 
 focus_follows_mouse no
+
+exec --no-startup-id "xmodmap -e 'keycode 135 = Super_R' && xset -r 135"
