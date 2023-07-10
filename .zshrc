@@ -8,7 +8,7 @@ fi
 # it shows not all current path, but only last 2 components
 zstyle ':prompt:grml:left:items:path' token '%2~ '
 
-alias ll='ls --group-directories-first -ohA'
+alias ll='ls --group-directories-first -lhA'
 # auto cd to ranger directory
 alias r='. ranger'
 # this is just to be able to
