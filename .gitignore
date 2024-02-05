@@ -32,3 +32,4 @@
 !/.helpers/clean.sh
 !/.gdbinit
 !/.gdbearlyinit
+!/.inputrc
