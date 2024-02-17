@@ -23,7 +23,8 @@ alias blc='bluetoothctl'
 alias feh='feh -.'
 alias trr='transmission-remote'
 alias trans='bash /usr/bin/trans'
-alias students='task recurring +students recur:weekly parent: rc.dateformat:a-H:N'
+alias your-students='task recurring +students recur:weekly parent: rc.dateformat:a-H:N'
+alias your-pending='task li -myself'
 
 DIRCOLORS="${HOME}/.dircolors"
 test -r $DIRCOLORS && eval "$(dircolors $DIRCOLORS)"
