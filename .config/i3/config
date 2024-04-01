@@ -179,3 +179,6 @@ bindsym F7 exec ~/.local/bin/toggle-headphones.sh
 focus_follows_mouse no
 
 exec --no-startup-id "xmodmap -e 'keycode 135 = Super_R' && xset -r 135"
+
+bindsym XF86MonBrightnessUp exec brightnessctl -n -e set +10%
+bindsym XF86MonBrightnessDown exec brightnessctl -n -e set 10%-
