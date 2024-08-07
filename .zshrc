@@ -1,5 +1,7 @@
 # got it from stackoverflow :)
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+    # && ! tmux info &> /dev/null
+    # echo started tmux "PS1 = $PS1" "TERM = $TERM" "TMUX = $TMUX" >> ~/tmux-war/tmux-logs
     exec tmux
 fi
 
