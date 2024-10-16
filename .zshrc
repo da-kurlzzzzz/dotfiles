@@ -27,6 +27,7 @@ alias trr='transmission-remote'
 alias trans='bash /usr/bin/trans'
 alias your-students='task recurring +students recur:weekly parent: rc.dateformat:a-H:N'
 alias your-pending='task li -myself'
+alias note='$EDITOR $(date +%F)-notes.md'
 
 DIRCOLORS="${HOME}/.dircolors"
 test -r $DIRCOLORS && eval "$(dircolors $DIRCOLORS)"
@@ -49,3 +50,12 @@ unset VIMODE_FILE
 NOTFOUND_FILE="/usr/share/doc/pkgfile/command-not-found.zsh"
 test -r $NOTFOUND_FILE && source $NOTFOUND_FILE
 unset NOTFOUND_FILE
+
+export HISTSIZE=5000000
+
+_paste-with-xclip() {
+    LBUFFER+="$(xclip -o)"
+}
+
+zle -N _paste-with-xclip
+bindkey -v '^v' _paste-with-xclip
