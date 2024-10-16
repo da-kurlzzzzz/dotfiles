@@ -58,6 +58,8 @@ nnoremap <silent> <Leader>w :execute 'silent write !sudo tee % >/dev/null' <bar>
 nnoremap <silent> <Leader>t :execute 'terminal' <bar> execute 'setlocal nonumber'<CR>
 " sometimes netrw can be useful
 nnoremap <silent> <Leader>n :32Lexplore<CR>
+" ctrl-l is remapped later, but we retain functionality
+nnoremap <silent> <Leader>l :redraw!<CR>
 
 " makes navigation easier
 nnoremap <C-H> <C-W><C-H>
@@ -74,6 +76,7 @@ inoremap <CR> <C-G>u<CR>
 " swap meaning of : and ;
 nmap ; :
 xmap ; :
+nmap q; q:
 nnoremap ;; ;
 xnoremap ;; ;
 
@@ -88,6 +91,9 @@ set cpoptions-=a
 " it is surprisingly useful sometimes
 set keymap=russian-jcukenwin
 set iminsert=0
+
+set clipboard^=unnamed,unnamedplus
+nnoremap <silent> <C-W>v :vertical new<CR>
 
 let g:netrw_banner=0
 let g:netrw_liststyle=3
