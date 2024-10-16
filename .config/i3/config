@@ -184,3 +184,5 @@ bindsym XF86MonBrightnessUp exec brightnessctl -n -e set +11%
 bindsym XF86MonBrightnessDown exec brightnessctl -n -e set 11%-
 bindsym --release $mod+Shift+s exec systemctl hibernate
 bindsym --release $mod+Shift+w exec systemctl suspend
+
+exec --no-startup-id "autorandr -l horizontal"
