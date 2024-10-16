@@ -14,16 +14,18 @@
 !/.config/transmission-daemon
 !/.config/transmission-daemon/settings.json
 !/.config/alacritty
-!/.config/alacritty/alacritty.yml
 !/.config/alacritty/alacritty.toml
-!/.gitconfig
-!/.tmux.conf
+!/.config/git/
+!/.config/git/config
+!/.config/tmux/
+!/.config/tmux/tmux.conf
 !/.vim/
 !/.vim/vimrc
 !/.vim/skel/
 !/.vim/skel/*
 !/.xinitrc
 !/.zshrc
+!/.zprofile
 !/LICENSE
 !/README.md
 !/.gitignore
@@ -34,4 +36,5 @@
 !/.gdbinit
 !/.gdbearlyinit
 !/.inputrc
+!/.ssh/
 !/.ssh/config
