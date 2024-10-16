@@ -15,6 +15,7 @@
 !/.config/transmission-daemon/settings.json
 !/.config/alacritty
 !/.config/alacritty/alacritty.yml
+!/.config/alacritty/alacritty.toml
 !/.gitconfig
 !/.tmux.conf
 !/.vim/
