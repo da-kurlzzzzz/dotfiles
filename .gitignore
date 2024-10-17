@@ -23,6 +23,8 @@
 !/.vim/vimrc
 !/.vim/skel/
 !/.vim/skel/*
+!/.vim/keymap/
+!/.vim/keymap/*
 !/.xinitrc
 !/.zshrc
 !/.zprofile

@@ -89,7 +89,7 @@ autocmd BufNewFile * :silent! exec ":r ".SKELDIR."/".&filetype | 0delete
 set cpoptions-=a
 
 " it is surprisingly useful sometimes
-set keymap=russian-jcukenwin
+set keymap=russian-jcukenwin-custom
 set iminsert=0
 
 set clipboard^=unnamed,unnamedplus
