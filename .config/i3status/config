@@ -12,6 +12,7 @@ general {
         interval = 1
 }
 
+order += "path_exists sda"
 order += "volume master"
 order += "wireless _first_"
 order += "battery all"
@@ -19,6 +20,12 @@ order += "disk /"
 order += "load"
 order += "memory"
 order += "time"
+
+path_exists sda {
+    format = "sda: %status"
+    path = "/dev/sda"
+    color_bad = "#FFFFFF"
+}
 
 volume master {
 }
