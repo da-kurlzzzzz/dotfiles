@@ -19,6 +19,8 @@
 !/.config/git/config
 !/.config/tmux/
 !/.config/tmux/tmux.conf
+!/.config/i3blocks/
+!/.config/i3blocks/config
 !/.vim/
 !/.vim/vimrc
 !/.vim/skel/

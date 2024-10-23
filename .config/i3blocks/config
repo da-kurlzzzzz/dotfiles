@@ -1,0 +1,16 @@
+interval=1
+
+[volume]
+command=pactl -f json list sinks | jq -r '.[] | select(.name == "'$(pactl get-default-sink)'").volume."front-left".value_percent'
+
+[disk]
+command=df -h / | awk 'END { print $4 }'
+
+[load]
+command=cut -d' ' -f1-3 /proc/loadavg
+
+[ram]
+command=free -h | awk '/^Mem:/ { print $3 " / " $2 }'
+
+[time]
+command=date '+%F %T'
