@@ -2,7 +2,7 @@
 
 rx_file=/sys/class/net/enp2s0/statistics/rx_bytes
 tx_file=/sys/class/net/enp2s0/statistics/tx_bytes
-tau=1
+tau=1.5
 
 to_mb()
 {
@@ -17,7 +17,6 @@ tx=$(cat $tx_file)
 
 while true
 do
-    sleep 2
     cur_time=$(date +%s.%N)
     dt=$(bc <<< "$cur_time - $time")
     dt=$(awk -v t=$(date +%s.%N) "BEGIN { print t - $time }")
@@ -40,4 +39,5 @@ do
     #printf "%.1f down, $.1f up\n" $(bc <<< "$avg / 1024")
     #printf "%5.0f v ^ %-5.0f\n" $(to_mb $rx_avg) $(to_mb $tx_avg)
     echo down: $(to_mb $rx_avg) up: $(to_mb $tx_avg)
+    sleep 2
 done
