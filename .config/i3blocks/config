@@ -5,7 +5,7 @@ command=./speed.sh
 interval=persist
 
 [sda]
-command=udisksctl status | awk 'NR > 2 { printf "%s ", $5 }'; echo
+command=udisksctl status | awk 'NR > 2 { printf "%s%s", (NR == 3 ? "" : " "), $NF }'; echo
 
 [volume]
 command=./volume.sh
@@ -26,3 +26,5 @@ command=free -h | awk '/^Mem:/ { print $3 " / " $2 }'
 
 [time]
 command=date '+%F %T'
+
+# vim: ft=dosini
