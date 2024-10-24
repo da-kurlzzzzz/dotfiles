@@ -1,7 +1,13 @@
 interval=1
 
+[sda]
+
 [volume]
 command=pactl -f json list sinks | jq -r '.[] | select(.name == "'$(pactl get-default-sink)'").volume."front-left".value_percent'
+
+[wifi]
+
+[battery]
 
 [disk]
 command=df -h / | awk 'END { print $4 }'
