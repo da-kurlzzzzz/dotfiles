@@ -36,8 +36,6 @@ do
     rx=$cur_rx
     tx=$cur_tx
 
-    #printf "%.1f down, $.1f up\n" $(bc <<< "$avg / 1024")
-    #printf "%5.0f v ^ %-5.0f\n" $(to_mb $rx_avg) $(to_mb $tx_avg)
-    echo down: $(to_mb $rx_avg) up: $(to_mb $tx_avg)
+    echo $(to_mb $rx_avg) ∇ ∆ $(to_mb $tx_avg)
     sleep 2
 done
