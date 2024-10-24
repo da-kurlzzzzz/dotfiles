@@ -1,11 +1,17 @@
 interval=1
 
+[speed]
+command=./speed.sh
+interval=persist
+
 [sda]
+command=udisksctl status | awk 'NR > 2 { printf "%s ", $5 }'; echo
 
 [volume]
-command=pactl -f json list sinks | jq -r '.[] | select(.name == "'$(pactl get-default-sink)'").volume."front-left".value_percent'
+command=./volume.sh
 
 [wifi]
+command=./wifi.sh
 
 [battery]
 
