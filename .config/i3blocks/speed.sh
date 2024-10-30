@@ -2,11 +2,20 @@
 
 tau=1.5
 
-rx_file=/sys/class/net/enp2s0/statistics/rx_bytes
-tx_file=${rx_file/rx/tx}
+reset_configs() {
+    iface=$(ip address | awk '/inet.*brd/{print $NF}')
 
-rx_time=$(date +%s.%N)
-tx_time=$(date +%s.%N)
+    rx_file=/sys/class/net/$iface/statistics/rx_bytes
+    tx_file=${rx_file/rx/tx}
+
+    rx_time=$(date +%s.%N)
+    tx_time=$(date +%s.%N)
+
+    rx_avg=0
+    tx_avg=0
+    rx_old=$(cat $rx_file)
+    tx_old=$(cat $tx_file)
+}
 
 update_avg()
 {
@@ -34,13 +43,11 @@ to_human()
     bc <<< "$1 / 1024.0"
 }
 
-rx_avg=0
-tx_avg=0
-rx_old=$(cat $rx_file)
-tx_old=$(cat $tx_file)
+reset_configs
 
 while true
 do
+    ip route | grep "default via [.[:digit:]]* dev $iface" 2>&1 >/dev/null || reset_configs
     read rx_avg rx_old rx_time < <(update_avg $rx_file $rx_avg $rx_old $rx_time)
     read tx_avg tx_old tx_time < <(update_avg $tx_file $tx_avg $tx_old $tx_time)
 
