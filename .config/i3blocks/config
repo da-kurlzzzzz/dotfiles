@@ -14,6 +14,7 @@ command=./volume.sh
 command=./wifi.sh
 
 [battery]
+command=./battery.sh
 
 [disk]
 command=df -h / | awk 'END { print $4 }'
