@@ -9,4 +9,4 @@ mute=$(pactl -f json list sinks |
 [ $mute = true ] && echo mute && exit
 
 pactl -f json list sinks |
-jq -r '.[] | select(.name == "'$default'").volume."front-left".value_percent'
+jq -r '.[] | select(.name == "'$default'").volume | map(select(has("value_percent")))[].value_percent'
