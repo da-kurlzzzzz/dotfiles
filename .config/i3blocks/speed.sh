@@ -2,8 +2,13 @@
 
 tau=1.5
 
+check_iface() {
+    new_iface=$(ip route get 8.8.8.8 | sed -E 's/.*dev (\S*).*/\1/;q')
+    [ $new_iface = $iface ]
+}
+
 reset_configs() {
-    iface=$(ip address | awk '/inet.*brd/{print $NF}')
+    iface=$(ip route get 8.8.8.8 | sed -E 's/.*dev (\S*).*/\1/;q')
 
     rx_file=/sys/class/net/$iface/statistics/rx_bytes
     tx_file=${rx_file/rx/tx}
@@ -47,7 +52,7 @@ reset_configs
 
 while true
 do
-    ip route | grep "default via [.[:digit:]]* dev $iface" 2>&1 >/dev/null || reset_configs
+    check_iface || reset_configs
     read rx_avg rx_old rx_time < <(update_avg $rx_file $rx_avg $rx_old $rx_time)
     read tx_avg tx_old tx_time < <(update_avg $tx_file $tx_avg $tx_old $tx_time)
 
