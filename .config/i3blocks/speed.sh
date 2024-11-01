@@ -52,7 +52,7 @@ reset_configs
 
 while true
 do
-    check_iface || reset_configs
+    check_iface || { reset_configs; sleep 0.1; }
     read rx_avg rx_old rx_time < <(update_avg $rx_file $rx_avg $rx_old $rx_time)
     read tx_avg tx_old tx_time < <(update_avg $tx_file $tx_avg $tx_old $tx_time)
 
