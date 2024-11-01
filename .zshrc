@@ -40,6 +40,7 @@ PATH="${HOME}/bin:${HOME}/.local/bin:${PATH}"
 export MANPAGER="vim --not-a-term +MANPAGER -c 'setlocal nonumber' -"
 
 setopt globstarshort
+unsetopt extendedglob
 
 VIMODE_FILE="/usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh"
 ZVM_KEYTIMEOUT=0
