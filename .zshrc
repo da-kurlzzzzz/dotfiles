@@ -12,7 +12,11 @@ zstyle ':prompt:grml:left:items:path' token '%2~ '
 
 alias ll='ls --group-directories-first -lhA'
 # auto cd to ranger directory
-alias r='. ranger'
+
+_run-ranger() {
+    [ -z $RANGER_LEVEL ] && . ranger || echo >&2 already inside ranger
+}
+alias r=_run-ranger
 # this is just to be able to
 # $ watch ll
 alias watch='watch '
