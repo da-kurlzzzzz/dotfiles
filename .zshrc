@@ -14,7 +14,7 @@ alias ll='ls --group-directories-first -lhA'
 # auto cd to ranger directory
 
 _run-ranger() {
-    [ -z $RANGER_LEVEL ] && . ranger || echo >&2 already inside ranger
+    [ -z $RANGER_LEVEL ] && . ranger || exit
 }
 alias r=_run-ranger
 # this is just to be able to
