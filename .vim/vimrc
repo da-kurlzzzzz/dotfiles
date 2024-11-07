@@ -1,5 +1,5 @@
 " should be default
-source $VIMRUNTIME/defaults.vim
+source $MYVIMDIR/defaults.vim
 
 " changes to defaults
 augroup vimHints | exe 'au!' | augroup END
@@ -104,4 +104,4 @@ let g:netrw_liststyle=3
 " let g:netrw_bufsettings='noma nomod nonu nowrap ro nobl'
   let g:netrw_bufsettings='noma nomod nu   nowrap ro nobl'
 
-  let g:user_emmet_leader_key='<C-I>'
+let g:user_emmet_leader_key='<C-I>'

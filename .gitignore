@@ -3,8 +3,6 @@
 !/.config/
 !/.config/i3
 !/.config/i3/**
-!/.config/i3status/
-!/.config/i3status/**
 !/.config/htop
 !/.config/htop/**
 !/.config/yay
@@ -24,10 +22,17 @@
 !/.config/i3blocks/*.sh
 !/.vim/
 !/.vim/vimrc
+!/.vim/defaults.vim
 !/.vim/skel/
 !/.vim/skel/*
 !/.vim/keymap/
 !/.vim/keymap/*
+!/.vim/pack/
+!/.vim/pack/tpope/
+!/.vim/pack/tpope/start/
+!/.vim/pack/tpope/start/sensible/
+!/.vim/pack/tpope/start/sensible/plugin/
+!/.vim/pack/tpope/start/sensible/plugin/sensible.vim
 !/.xinitrc
 !/.zshrc
 !/.zprofile
