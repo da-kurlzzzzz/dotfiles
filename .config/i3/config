@@ -20,7 +20,7 @@ bindsym XF86MonBrightnessUp exec brightnessctl -n -e set +11%
 bindsym XF86MonBrightnessDown exec brightnessctl -n -e set 11%-
 
 # Use import and xclip to take screenshots
-bindsym --release Print exec --no-startup-id import png:- | xclip -selection clipboard -t image/png
+bindsym --release Print exec --no-startup-id "xdotool mousemove_relative 1 0; import png:- | xclip -selection clipboard -t image/png"
 bindsym --release Alt_R exec --no-startup-id "import -window $(i3-msg -t get_tree | jq 'recurse((.nodes, .floating_nodes)[]) | select(.focused).window') png:- | xclip -selection clipboard -t image/png"
 
 # Use systemctl to hibernate and sleep
