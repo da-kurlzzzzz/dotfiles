@@ -1,5 +1,5 @@
 " should be default
-source $MYVIMDIR/defaults.vim
+source ~/.vim/defaults.vim
 
 " changes to defaults
 augroup vimHints | exe 'au!' | augroup END
