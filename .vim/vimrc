@@ -104,4 +104,5 @@ let g:netrw_liststyle=3
 " let g:netrw_bufsettings='noma nomod nonu nowrap ro nobl'
   let g:netrw_bufsettings='noma nomod nu   nowrap ro nobl'
 
-let g:user_emmet_leader_key='<C-I>'
+let g:user_emmet_mode='i'
+let g:user_emmet_leader_key='<C-E>'
