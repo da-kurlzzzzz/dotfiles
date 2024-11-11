@@ -64,3 +64,14 @@ _paste-with-xclip() {
 
 zle -N _paste-with-xclip
 bindkey -v '^v' _paste-with-xclip
+
+
+# ZSH=/usr/share/oh-my-zsh/
+# ZSH_THEME="crcandy"
+# ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
+# plugins=(git)
+# if [[ ! -d $ZSH_CACHE_DIR ]]; then
+#   mkdir $ZSH_CACHE_DIR
+# fi
+# source $ZSH/oh-my-zsh.sh
+source /etc/zsh/zshrc.grml
