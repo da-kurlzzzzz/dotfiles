@@ -65,13 +65,30 @@ _paste-with-xclip() {
 zle -N _paste-with-xclip
 bindkey -v '^v' _paste-with-xclip
 
+setopt auto_cd
+setopt auto_pushd
+setopt share_history
+setopt append_history
+setopt extended_history
+setopt histignorespace
+setopt pushd_ignore_dups
+setopt noglobdots
+setopt correct
+
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:*' formats '%s(%b) '
+precmd() { vcs_info }
+setopt prompt_subst
+PROMPT='%F{blue}%B%n%b%f@%m %2~ ${vcs_info_msg_0_}%# '
+RPROMPT='%3(L.inside ranger.)%(?.. ret:%F{red}%B%?%b%f)'
 
 # ZSH=/usr/share/oh-my-zsh/
-# ZSH_THEME="crcandy"
+# ZSH_THEME="random"
 # ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
 # plugins=(git)
 # if [[ ! -d $ZSH_CACHE_DIR ]]; then
 #   mkdir $ZSH_CACHE_DIR
 # fi
 # source $ZSH/oh-my-zsh.sh
-source /etc/zsh/zshrc.grml
+# source /etc/zsh/zshrc.grml
