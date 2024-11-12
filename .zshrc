@@ -55,6 +55,14 @@ _fg-ctrl-z() {
 zle -N _fg-ctrl-z
 bindkey '^z' _fg-ctrl-z
 
+_mkcd() {
+    mkdir "$1" && cd "$1"
+}
+
+alias mkcd='_mkcd'
+
+REPORTTIME=
+
 # this is just to be able to
 # $ watch <aliased command>
 # $ sudo <aliased command>
