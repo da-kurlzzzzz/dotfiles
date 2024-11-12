@@ -4,11 +4,13 @@
 # temporary directories, no configs there
 /.cache/
 /.local/share/
+/.local/lib/
 
 # all history files
 *_history
 /.vim/.netrwhist
 /.lesshst
+/.wget-hsts
 
 # stray files not related to configs
 /.Xauthority
@@ -25,6 +27,7 @@
 /.pki/
 /.ssh/id_*
 /.ssh/known_hosts*
+/.ssh/authorized_keys
 /.config/systemd/user/default.target.wants/
 /.config/task/*.pem
 /.config/torbrowser/
@@ -51,3 +54,18 @@
 /.config/dconf/
 /.config/xreader/
 /.config/mimeapps.list
+/.cargo/
+/.config/VK/
+/.config/chromium/
+/.config/discord/
+/.config/skypeforlinux/
+/.config/opera/
+/.config/transmission-daemon/
+/.config/whatsapp-nativefier*
+/.config/BetterDiscord*
+/.electron-gyp/
+/.electrum/
+/.npm/
+/.zoom/
+/.config/obs-studio/
+/.android/
