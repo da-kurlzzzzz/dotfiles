@@ -5,6 +5,9 @@
 /.cache/
 /.local/share/
 /.local/lib/
+/.local/state/
+/.local/include/
+/.tox/
 
 # all history files
 *_history
@@ -31,6 +34,10 @@
 /.config/systemd/user/default.target.wants/
 /.config/task/*.pem
 /.config/torbrowser/
+/.helpers/password.txt
+
+# TODO check my own executables
+/.local/bin/
 
 # maybe i will add their configs later...
 /.config/GIMP/
@@ -41,11 +48,14 @@
 /.gtkrc-2.0
 /.config/gtk-2.0/
 /.config/gtk-3.0/
-/.config/qalculate/qalculate-gtk.cfg
+/.config/qalculate/
 /.config/rclone/rclone.conf
 /.config/task/taskrc
 /.config/user-dirs.dirs
 /.config/user-dirs.locale
+/.vim/coc-settings.json
+/.config/qt5ct/
+/.config/digikamrc
 
 # i probably won't add those
 /.irssi/
@@ -69,3 +79,9 @@
 /.zoom/
 /.config/obs-studio/
 /.android/
+/.config/Unknown Organization/
+/.config/syncthing/
+/.config/vlc/
+.config/cef_user_data/
+.config/coc/
+.config/configstore/
