@@ -71,7 +71,7 @@ alias sudo='sudo '
 
 # minor aliases just for me
 alias xclip='xclip -rmlastnl -selection clipboard'
-alias uu='udiskie-umount -fd'
+alias uu='sync && udiskie-umount -fd'
 alias sc='systemctl'
 alias blc='bluetoothctl'
 alias feh='feh -.'
