@@ -106,3 +106,12 @@ let g:netrw_liststyle=3
 
 let g:user_emmet_mode='i'
 let g:user_emmet_leader_key='<C-E>'
+
+" i put a little emacs in your vim
+cnoremap <C-A> <Home>
+cnoremap <C-E> <End>
+
+execute "set <A-B>=\eb"
+cnoremap <A-B> <S-Left>
+execute "set <A-F>=\ef"
+cnoremap <A-F> <S-Right>
