@@ -1,5 +1,7 @@
 # they are called DOTfiles for a reason
 /[^.]*
+!/LICENSE
+!/README.md
 
 # temporary directories, no configs there
 /.cache/
@@ -70,7 +72,6 @@
 /.config/discord/
 /.config/skypeforlinux/
 /.config/opera/
-/.config/transmission-daemon/
 /.config/whatsapp-nativefier*
 /.config/BetterDiscord*
 /.electron-gyp/
@@ -82,6 +83,6 @@
 /.config/Unknown Organization/
 /.config/syncthing/
 /.config/vlc/
-.config/cef_user_data/
-.config/coc/
-.config/configstore/
+/.config/cef_user_data/
+/.config/coc/
+/.config/configstore/
