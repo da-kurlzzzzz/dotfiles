@@ -35,8 +35,9 @@ bindsym F4 exec discord
 # F5 to reload in browser
 # F6 to edit address in browser
 bindsym F7 exec ~/.local/bin/toggle-headphones.sh
-bindsym F8 exec telegram-desktop
-# F9 - F11 are free real estate
+# F8 is host key in VirtualBox
+bindsym F9 exec telegram-desktop
+# F10 - F11 are free real estate
 # F12 to open dev console in browser
 
 # Autostart starts here
