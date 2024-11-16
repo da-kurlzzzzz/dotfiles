@@ -24,6 +24,10 @@
 /.viminfo*
 /.zcompdump*
 /.vim/undo/
+/.config/transmission-daemon/resume/
+/.config/transmission-daemon/torrents/
+/.config/transmission-daemon/stats.json
+/.config/transmission-daemon/dht.dat
 
 # meaningful excludes
 /.mozilla/
