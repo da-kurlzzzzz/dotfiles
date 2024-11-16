@@ -44,8 +44,6 @@ bindsym F9 exec telegram-desktop
 
 exec --no-startup-id "xmodmap -e 'keycode 135 = Super_R' && xset -r 135"
 
-exec --no-startup-id "autorandr -l horizontal"
-
 # Defaults start here
 
 # Use Mouse+$mod to drag floating windows to their wanted position
