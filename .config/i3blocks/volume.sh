@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-printf "%s " 𝅘𝅥𝅮
 default=$(pactl get-default-sink)
 
 mute=$(pactl -f json list sinks |
