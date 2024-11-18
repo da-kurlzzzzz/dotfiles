@@ -9,3 +9,5 @@
 	adog = log --all --decorate --oneline --graph
 [merge]
 	tool = vimdiff
+[pull]
+	ff = on
