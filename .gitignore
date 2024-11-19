@@ -42,6 +42,7 @@
 /.config/task/*.pem
 /.config/torbrowser/
 /.helpers/password.txt
+/.config/tigervnc/passwd
 
 # TODO check my own executables
 /.local/bin/
