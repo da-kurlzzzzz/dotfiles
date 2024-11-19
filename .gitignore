@@ -10,6 +10,7 @@
 /.local/state/
 /.local/include/
 /.tox/
+/.fltk/
 
 # all history files
 *_history
