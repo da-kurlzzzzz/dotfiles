@@ -99,6 +99,9 @@ set clipboard^=unnamed,unnamedplus
 " ctrl-z sometimes messes up my terminal
 nnoremap <C-Z> <nop>
 
+" trying out folds
+set foldmethod=marker
+
 let g:netrw_banner=0
 let g:netrw_liststyle=3
 " let g:netrw_bufsettings='noma nomod nonu nowrap ro nobl'
