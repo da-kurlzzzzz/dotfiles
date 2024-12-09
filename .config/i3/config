@@ -37,7 +37,8 @@ bindsym F4 exec discord
 bindsym F7 exec ~/.local/bin/toggle-headphones.sh
 # F8 is host key in VirtualBox
 bindsym F9 exec telegram-desktop
-# F10 - F11 are free real estate
+# F10 is free real estate
+# F11 cannot be imitated with Esc,number so i will not rebind it
 # F12 to open dev console in browser
 
 # Autostart starts here
