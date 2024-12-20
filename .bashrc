@@ -2,6 +2,7 @@ PS1='\[\e[1;34m\]\u\[\e[0m\]@\h \w % '
 PROMPT_DIRTRIM=2
 export EDITOR=vim
 export PROMPT_COMMAND="[ -z $RANGER_LEVEL ] || printf 'R '"
+export TERM=xterm-256color
 
 alias ls='ls --color'
 alias l='ls -l'
