@@ -8,7 +8,7 @@ check_iface() {
 }
 
 reset_configs() {
-    iface=$(ip route get 8.8.8.8 | sed -E 's/.*dev (\S*).*/\1/;q')
+    iface=$({ ip route get 8.8.8.8 || echo "dev lo"; } | sed -E 's/.*dev (\S*).*/\1/;q')
 
     rx_file=/sys/class/net/$iface/statistics/rx_bytes
     tx_file=${rx_file/rx/tx}
