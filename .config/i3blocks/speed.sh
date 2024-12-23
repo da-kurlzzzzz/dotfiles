@@ -30,22 +30,25 @@ update_avg()
     x_time=$4
 
     x_cur=$(cat $x_file)
-    dx=$(bc <<< "$x_cur - $x_old")
-
     time_cur=$(date +%s.%N)
-    dt=$(bc <<< "$time_cur - $x_time")
 
-    x_speed=$(bc <<< "$dx / $dt")
-
-    alpha=$(printf "%f" $(bc -l <<< "1 - e(-$dt / $tau)"))
-    x_avg=$(bc <<< "$alpha * $x_speed + (1 - $alpha) * $x_avg")
+    x_avg=$(awk --bignum <<< "$x_cur $x_old $time_cur $x_time $tau $x_avg" '
+        {
+            dx = $1 - $2
+            dt = $3 - $4
+            x_speed = dx / dt
+            alpha = 1 - exp(-dt / $5)
+            x_avg = alpha * x_speed + (1 - alpha) * $6
+            print(x_avg)
+        }
+    ')
 
     echo $x_avg $x_cur $time_cur
 }
 
 to_human()
 {
-    bc <<< "$1 / 1024.0"
+    awk <<< "$1" '{print(int($1 / 1024.0))}'
 }
 
 reset_configs
