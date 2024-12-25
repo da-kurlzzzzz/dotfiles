@@ -29,8 +29,8 @@ test -r $DIRCOLORS && eval "$(dircolors $DIRCOLORS)"
 unset DIRCOLORS
 
 # all the nice things
-source .aliasrc
-source .envrc
+source ~/.aliasrc
+source ~/.envrc
 
 _paste-with-xclip() {
     LBUFFER+="$(xclip -o)"

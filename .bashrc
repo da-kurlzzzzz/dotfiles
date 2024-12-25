@@ -1,5 +1,5 @@
-source .aliasrc
-source .envrc
+source ~/.aliasrc
+source ~/.envrc
 
 # for wonky terminals over ssh
 export TERM=xterm-256color
