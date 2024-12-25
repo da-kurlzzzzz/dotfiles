@@ -1,0 +1,41 @@
+alias ls='ls --color'
+alias l='ls -l'
+alias ll='ls --group-directories-first -lhA'
+alias r='. ranger'
+alias watch='watch '
+alias sudo='sudo '
+alias sc='systemctl'
+alias blc='bluetoothctl'
+alias ..='cd ..'
+alias ...='cd ../..'
+
+# auto cd to ranger directory
+_run-ranger() {
+    [ -z $RANGER_LEVEL ] && . ranger || exit
+}
+alias r=_run-ranger
+
+_mkcd() {
+    mkdir "$1" && cd "$1"
+}
+alias mkcd='_mkcd'
+
+# this is just to be able to
+# $ watch <aliased command>
+# $ sudo <aliased command>
+alias watch='watch '
+alias sudo='sudo '
+
+# minor aliases just for me
+alias xclip='xclip -rmlastnl -selection clipboard'
+alias uu='sync && udiskie-umount -fd'
+alias sc='systemctl'
+alias blc='bluetoothctl'
+alias feh='feh -.'
+alias trr='transmission-remote'
+alias trans='bash /usr/bin/trans'
+alias your-students='task recurring +students recur:weekly parent: rc.dateformat:a-H:N'
+alias your-pending='task li -myself'
+alias note='$EDITOR $(date +%F)-notes.md'
+
+# vim:ft=sh
