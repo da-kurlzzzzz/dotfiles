@@ -33,7 +33,7 @@ source ~/.aliasrc
 source ~/.envrc
 
 _paste-with-xclip() {
-    LBUFFER+="$(xclip -o)"
+    LBUFFER+="$(xclip -o 2>/dev/null)"
 }
 zle -N _paste-with-xclip
 bindkey -v '^v' _paste-with-xclip
