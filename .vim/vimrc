@@ -86,7 +86,7 @@ let SKELDIR = $HOME."/.vim/skel"
 if !isdirectory(SKELDIR)
     call mkdir(SKELDIR, "", 0755)
 endif
-autocmd BufNewFile * :silent! exec ":r ".SKELDIR."/".&filetype | 0delete
+autocmd BufNewFile * :silent! exec ":r ".SKELDIR."/".&filetype | 0delete _
 set cpoptions-=a
 
 " it is surprisingly useful sometimes
