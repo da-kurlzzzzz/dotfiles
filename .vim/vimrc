@@ -77,7 +77,7 @@ inoremap <CR> <C-G>u<CR>
 " swap meaning of : and ;
 nmap ; :
 xmap ; :
-nmap q; q:
+"nmap q; q:
 nnoremap ;; ;
 xnoremap ;; ;
 
