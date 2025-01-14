@@ -62,7 +62,9 @@ export SAVEHIST=$HISTSIZE
 
 # plugins:
 
-VIMODE_FILE="/usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh"
+VIMODE_DIR="/usr/share/zsh/plugins/zsh-vi-mode"
+test -d "$VIMODE_DIR" || VIMODE_DIR="/home/zarechnev/.zsh-vi-mode"
+VIMODE_FILE="$VIMODE_DIR/zsh-vi-mode.plugin.zsh"
 ZVM_KEYTIMEOUT=0
 ZVM_ESCAPE_KEYTIMEOUT=0
 test -r $VIMODE_FILE && source $VIMODE_FILE
