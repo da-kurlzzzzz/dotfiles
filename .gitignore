@@ -47,6 +47,7 @@
 
 # TODO check my own executables
 /.local/bin/
+/.zsh-vi-mode/
 
 # maybe i will add their configs later...
 /.config/GIMP/
