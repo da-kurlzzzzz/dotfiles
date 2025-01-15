@@ -1,5 +1,7 @@
 " should be default
-source ~/.vim/defaults.vim
+let rcpath = expand('<sfile>:p:h')
+let tosource = rcpath . '/defaults.vim'
+execute 'source '.tosource
 
 " changes to defaults
 augroup vimHints | exe 'au!' | augroup END
