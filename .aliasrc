@@ -1,4 +1,4 @@
-alias ls='ls --color'
+alias ls='ls --color=auto'
 alias l='ls -l'
 alias ll='ls --group-directories-first -lhA'
 alias r='. ranger'
@@ -37,5 +37,10 @@ alias trans='bash /usr/bin/trans'
 alias your-students='task recurring +students recur:weekly parent: rc.dateformat:a-H:N'
 alias your-pending='task li -myself'
 alias note='$EDITOR $(date +%F)-notes.md'
+
+# colors
+alias diff='diff --color=auto'
+alias grep='grep --color=auto'
+alias ip='ip -color=auto'
 
 # vim:ft=sh
