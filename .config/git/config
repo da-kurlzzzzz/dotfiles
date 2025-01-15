@@ -11,3 +11,5 @@
 	tool = vimdiff
 [pull]
 	ff = on
+[safe]
+    directory = *
