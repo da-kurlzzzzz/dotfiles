@@ -24,10 +24,6 @@ RPROMPT='${vcs_info_msg_0_}%(?.. ret:%F{red}%B%?%b%f)$([ ! -z $RANGER_LEVEL ] &&
 setopt auto_cd
 setopt auto_pushd
 
-DIRCOLORS="${HOME}/.dircolors"
-test -r $DIRCOLORS && eval "$(dircolors $DIRCOLORS)"
-unset DIRCOLORS
-
 # all the nice things
 source ~/.aliasrc
 source ~/.envrc
@@ -57,7 +53,6 @@ setopt inc_append_history
 setopt extended_history
 setopt share_history
 setopt hist_ignore_space
-export HISTSIZE=5000000
 export SAVEHIST=$HISTSIZE
 
 # plugins:
