@@ -1,0 +1,9 @@
+[Unit]
+After=hibernate.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/bash -c 'networkctl down enp2s0 && networkctl up enp2s0'
+
+[Install]
+WantedBy=hibernate.target

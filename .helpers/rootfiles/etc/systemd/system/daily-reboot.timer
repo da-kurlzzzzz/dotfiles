@@ -1,0 +1,9 @@
+[Unit]
+Description=daily reboot for remote reasons
+
+[Timer]
+OnCalendar=*-*-* 04:19
+Unit=reboot.target
+
+[Install]
+WantedBy=timers.target
