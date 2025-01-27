@@ -31,19 +31,6 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 # end of default stuff
 
-# TODO move everything below to i3 config
-TOUCHPAD="$(xinput --list | grep -i touchpad | sed 's/.*id=\([[:digit:]]*\).*/\1/')"
-
-# hate to force the touchpad
-xinput set-prop "$TOUCHPAD" "libinput Tapping Enabled" 1
-
-# reverse scroll direction to usual
-xinput set-prop "$TOUCHPAD" "libinput Natural Scrolling Enabled" 1
-
-# Caps Lock is useless
-setxkbmap -layout us,ru
-setxkbmap -option grp:shifts_toggle,grp_led:caps,caps:escape,altwin:menu_win
-
 # automounting
 udiskie &
 
