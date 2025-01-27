@@ -9,7 +9,7 @@ command=ping >/dev/null 2>&1 -W9 -c1 archlinux.org || printf "network down\n\n#F
 interval=10
 
 [sda]
-command=udisksctl status | awk 'NR > 2 { printf "%s%s", (NR == 3 ? "" : " "), $NF }'; echo
+command=./disks.sh
 
 [volume]
 command=./volume.sh
