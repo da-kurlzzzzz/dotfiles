@@ -4,11 +4,24 @@
 default:
 	@echo be careful what you wish for
 	@echo currently documented options are
-	@echo /etc/.../filename : populates filename with contents from rootdir
+	@echo /etc/.../filename : copies filename from rootdir
+	@echo populate : populates HOST with dotfiles via ssh
 
-ROOTDIR := ~/.helpers/rootfiles
+MYDIR := ~/.helpers
+ROOTDIR := $(MYDIR)/rootfiles
 
 /% : $(ROOTDIR)/%
 	@echo trying to copy $< to $@
 	[ -d $(@D) ] || sudo mkdir -p $(@D)
 	sudo cp $< $@
+
+~/.cache/archive.tgz: ~/.git/HEAD
+	git archive --format=tgz -o $@ HEAD
+
+.PHONY: populate
+populate: ~/.cache/archive.tgz
+ifndef HOST
+	$(error usage: wish populate HOST=hostname)
+endif
+	scp $< $(HOST):
+	ssh $(HOST) tar -xf archive.tgz
