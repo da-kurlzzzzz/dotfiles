@@ -32,7 +32,7 @@ update_avg()
     x_cur=$(cat $x_file)
     time_cur=$(date +%s.%N)
 
-    x_avg=$(awk --bignum <<< "$x_cur $x_old $time_cur $x_time $tau $x_avg" '
+    x_avg=$(awk <<< "$x_cur $x_old $time_cur $x_time $tau $x_avg" '
         {
             dx = $1 - $2
             dt = $3 - $4
