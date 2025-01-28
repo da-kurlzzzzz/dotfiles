@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 path=/sys/class/power_supply/BAT0
+[ -d "$path" ] || exit
 use=$(cat $path/status)
 
 now=$(cat $path/energy_now)
