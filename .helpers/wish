@@ -12,8 +12,9 @@ ROOTDIR := $(MYDIR)/rootfiles
 
 /% : $(ROOTDIR)/%
 	@echo trying to copy $< to $@
+	[ ! -d $@ ]
 	[ -d $(@D) ] || sudo mkdir -p $(@D)
-	sudo cp $< $@
+	sudo cp -r $< $@
 
 ~/.cache/archive.tgz: ~/.git/HEAD
 	git archive --format=tgz -o $@ HEAD
