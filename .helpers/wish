@@ -7,7 +7,7 @@ default:
 	@echo /etc/.../filename : copies filename from rootdir
 	@echo populate : populates HOST with dotfiles via ssh
 
-MYDIR := ~/.helpers
+MYDIR := $(HOME)/.helpers
 ROOTDIR := $(MYDIR)/rootfiles
 
 /% : $(ROOTDIR)/%
@@ -26,3 +26,15 @@ ifndef HOST
 endif
 	scp $< $(HOST):
 	ssh $(HOST) tar -xf archive.tgz
+
+possible_groups := $(file < $(MYDIR)/groups)
+
+groups:
+ifndef OVERWRITE
+	@echo current:
+	@groups
+	@echo can be wished for:
+	@echo $(possible_groups)
+else
+	sudo usermod -aG $(possible_groups)
+endif
