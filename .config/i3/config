@@ -111,6 +111,7 @@ workspace_auto_back_and_forth yes
 
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
+for_window [window_role="PictureInPicture"] sticky enable, move scratchpad, scratchpad show
 
 # Bar starts here
 
