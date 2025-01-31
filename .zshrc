@@ -43,6 +43,7 @@ zle -N _fg-ctrl-z
 bindkey '^z' _fg-ctrl-z
 
 REPORTTIME=
+ZLE_SPACE_SUFFIX_CHARS=$'|'
 
 setopt globstarshort
 setopt nocaseglob
