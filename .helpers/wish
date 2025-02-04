@@ -38,3 +38,7 @@ ifndef OVERWRITE
 else
 	sudo usermod -aG $(possible_groups)
 endif
+
+.PHONY: system
+system:
+	$(MYDIR)/system-configs.sh $(MYDIR)
