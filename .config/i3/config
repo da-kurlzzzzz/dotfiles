@@ -53,6 +53,7 @@ exec --no-startup-id "xset -b"
 exec --no-startup-id "unclutter"
 
 exec --no-startup-id "xmodmap -e 'keycode 135 = Super_R' && xset -r 135"
+exec --no-startup-id "xss-lock --transfer-sleep-lock --session=$XDG_SESSION_ID -- i3lock --nofork --color=000000"
 
 # Defaults start here
 
@@ -71,6 +72,8 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exit
+# lock screen (without logging out
+bindsym $mod+Shift+z exec i3lock --color=000000
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id dmenu_run
