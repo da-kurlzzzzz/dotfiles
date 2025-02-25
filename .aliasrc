@@ -11,7 +11,7 @@ alias ...='cd ../..'
 
 # auto cd to ranger directory
 _run-ranger() {
-    [ -z $RANGER_LEVEL ] && . ranger || exit
+    [ -z $RANGER_LEVEL ] && . ranger || echo ranger: not found
 }
 alias r=_run-ranger
 
