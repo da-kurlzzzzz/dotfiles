@@ -1,0 +1,1 @@
+[ -f ~/.envrc ] && source ~/.envrc
