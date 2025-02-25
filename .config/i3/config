@@ -43,6 +43,15 @@ bindsym F9 exec telegram-desktop
 
 # Autostart starts here
 
+# automounting
+exec --no-startup-id "udiskie"
+# screen must be on
+exec --no-startup-id "xset s off -dpms"
+# strange bell is now off
+exec --no-startup-id "xset -b"
+# hide cursor when it is not needed
+exec --no-startup-id "unclutter"
+
 exec --no-startup-id "xmodmap -e 'keycode 135 = Super_R' && xset -r 135"
 
 # Defaults start here
