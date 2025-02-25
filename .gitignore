@@ -44,16 +44,15 @@
 /.config/torbrowser/
 /.helpers/password.txt
 /.config/tigervnc/passwd
+/.config/tigervnc/default.tigervnc
 
 # TODO check my own executables
 /.local/bin/
 /.zsh-vi-mode/
 
 # maybe i will add their configs later...
-/.config/GIMP/
 /.config/go/
 /.config/libreoffice/
-/.config/VirtualBox/
 /.config/pulse/
 /.gtkrc-2.0
 /.config/gtk-2.0/
@@ -65,6 +64,7 @@
 /.config/user-dirs.locale
 /.vim/coc-settings.json
 /.config/qt5ct/
+/.config/qt6ct/
 /.config/digikamrc
 
 # i probably won't add those
@@ -94,3 +94,6 @@
 /.config/cef_user_data/
 /.config/coc/
 /.config/configstore/
+/.config/GIMP/
+/.config/VirtualBox/
+/.config/MyOffice*
