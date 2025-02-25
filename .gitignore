@@ -45,6 +45,7 @@
 /.helpers/password.txt
 /.config/tigervnc/passwd
 /.config/tigervnc/default.tigervnc
+/.config/qalculate/qalculate-gtk.history
 
 # TODO check my own executables
 /.local/bin/
@@ -57,7 +58,6 @@
 /.gtkrc-2.0
 /.config/gtk-2.0/
 /.config/gtk-3.0/
-/.config/qalculate/
 /.config/rclone/rclone.conf
 /.config/task/taskrc
 /.config/user-dirs.dirs
