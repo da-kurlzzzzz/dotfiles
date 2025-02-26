@@ -2,7 +2,6 @@ interval=1
 
 [speed]
 command=./speed.sh
-interval=persist
 
 [ping]
 command=ping >/dev/null 2>&1 -W9 -c1 archlinux.org || printf "network down\n\n#FF0000\n#000000\n"
