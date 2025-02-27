@@ -29,6 +29,6 @@ command=cut -d' ' -f1-3 /proc/loadavg
 command=free -h | awk '/^Mem:/ { print $3 " / " $2 }'
 
 [time]
-command=date '+%F %T'
+command=date '+%F %T %a'
 
 # vim: ft=dosini
