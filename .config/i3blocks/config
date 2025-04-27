@@ -12,6 +12,7 @@ command=./disks.sh
 
 [volume]
 command=./volume.sh
+signal=10
 
 [wifi]
 command=./wifi.sh

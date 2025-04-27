@@ -128,7 +128,7 @@ for_window [window_role="PictureInPicture"] sticky enable, move scratchpad, scra
 # Bar starts here
 
 # Start i3bar to display a workspace bar
-set $refresh_i3status killall -SIGUSR1 i3status
+set $refresh_i3status killall -44 i3blocks
 bar {
         status_command exec i3blocks
 }
