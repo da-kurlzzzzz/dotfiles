@@ -30,6 +30,11 @@
 /.config/transmission-daemon/stats.json
 /.config/transmission-daemon/dht.dat
 
+# local multiple display setup
+# run `autorandr --save $(cat /etc/hostname)`
+/.config/autorandr/
+/.config/i3/displays.conf
+
 # meaningful excludes
 /.mozilla/
 /.gnupg/

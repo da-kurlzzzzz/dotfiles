@@ -55,6 +55,9 @@ exec --no-startup-id "unclutter"
 exec --no-startup-id "xmodmap -e 'keycode 135 = Super_R' && xset -r 135"
 exec --no-startup-id "xss-lock --transfer-sleep-lock --session=$XDG_SESSION_ID -- i3lock --nofork --color=000000"
 
+exec --no-startup-id "autorandr -l $(cat /etc/hostname)"
+include ~/.config/i3/displays.conf
+
 # Defaults start here
 
 # Use Mouse+$mod to drag floating windows to their wanted position
