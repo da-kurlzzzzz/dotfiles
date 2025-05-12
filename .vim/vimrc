@@ -1,5 +1,6 @@
 " should be default
-let rcpath = expand('<sfile>:p:h')
+let rcpath = resolve(expand('<sfile>:p'))
+let rcpath = fnamemodify(rcpath, ':h')
 let tosource = rcpath . '/defaults.vim'
 execute 'source '.tosource
 
