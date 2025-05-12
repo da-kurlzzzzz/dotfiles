@@ -16,16 +16,25 @@ ROOTDIR := $(MYDIR)/rootfiles
 	[ -d $(@D) ] || sudo mkdir -p $(@D)
 	sudo cp -r $< $@
 
-~/.cache/archive.tgz: ~/.git/HEAD
-	git archive --format=tgz -o $@ HEAD
+populate_files=.aliasrc .bash_profile .bashrc .config/htop/htoprc .config/ranger/rc.conf .config/ranger/rifle.conf .envrc .hushlogin .inputrc .profile .ssh/config .vim/defaults.vim .vim/keymap/russian-jcukenwin-custom.vim .vim/pack/tpope/start/sensible/plugin/sensible.vim .vim/skel/c .vim/skel/cpp .vim/skel/html .vim/skel/markdown .vim/skel/python .vim/skel/sh .vim/vimrc
+~/.cache/archive.tar: ~/.git/HEAD ~/.ranger/* ~/.zsh-vi-mode/*
+	git archive --format=tar -o $@ HEAD
+	tar -cf $@ $(populate_files)
+	ln -sf ../../.ranger/ranger.py ~/.local/bin/ranger
+	tar -rf $@ .ranger .zsh-vi-mode .local/bin/ranger
+	rm ~/.local/bin/ranger
+
+~/.cache/archive.tar.gz: ~/.cache/archive.tar
+	gzip -f $<
 
 .PHONY: populate
-populate: ~/.cache/archive.tgz
+populate: ~/.cache/archive.tar.gz
 ifndef HOST
 	$(error usage: wish populate HOST=hostname)
 endif
-	scp $< $(HOST):
-	ssh $(HOST) tar -xf archive.tgz
+	ssh $(HOST) mkdir -p .cache
+	scp -O $< $(HOST):.cache
+	ssh $(HOST) tar -xf .cache/$(notdir $<)
 
 possible_groups := $(file < $(MYDIR)/groups)
 
