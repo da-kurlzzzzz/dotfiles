@@ -37,6 +37,7 @@ alias trans='bash /usr/bin/trans'
 alias your-students='task recurring +students recur:weekly parent: rc.dateformat:a-H:N'
 alias your-pending='task li -myself'
 alias note='$EDITOR $(date +%F)-notes.md'
+alias pico='picocom -b 115200 /dev/ttyUSB0'
 
 # colors
 alias diff='diff --color=auto'
