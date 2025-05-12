@@ -1,7 +1,7 @@
 # got it from stackoverflow :)
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
     # && ! tmux info &> /dev/null
-    exec tmux
+    [ -z "$VSCODE_PID" ] && exec tmux
 fi
 
 # main zsh feature
