@@ -46,6 +46,8 @@
 /.config/tigervnc/passwd
 /.config/tigervnc/default.tigervnc
 /.config/qalculate/qalculate-gtk.history
+/.wine/
+/.config/menus/
 
 # TODO check my own executables
 /.local/bin/
