@@ -17,6 +17,7 @@
 /.vim/.netrwhist
 /.lesshst
 /.wget-hsts
+/.config/qalculate/qalculate-gtk.history
 
 # stray files not related to configs
 /.Xauthority
@@ -50,9 +51,9 @@
 /.helpers/password.txt
 /.config/tigervnc/passwd
 /.config/tigervnc/default.tigervnc
-/.config/qalculate/qalculate-gtk.history
 /.wine/
 /.config/menus/
+/.anydesk/
 
 # TODO check my own executables
 /.local/bin/
@@ -104,4 +105,3 @@
 /.config/GIMP/
 /.config/VirtualBox/
 /.config/MyOffice*
-/.anydesk/
