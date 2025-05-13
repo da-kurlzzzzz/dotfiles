@@ -18,6 +18,7 @@
 /.lesshst
 /.wget-hsts
 /.config/qalculate/qalculate-gtk.history
+/.ollama/history
 
 # stray files not related to configs
 /.Xauthority
@@ -30,6 +31,8 @@
 /.config/transmission-daemon/torrents/
 /.config/transmission-daemon/stats.json
 /.config/transmission-daemon/dht.dat
+/.i3/i3-resurrect/
+/.tmux/resurrect/
 
 # local multiple display setup
 # run `autorandr --save $(cat /etc/hostname)`
@@ -54,6 +57,12 @@
 /.wine/
 /.config/menus/
 /.anydesk/
+
+# electron apps have too many things
+/.config/Code - OSS/
+/.config/Cursor/
+/.config/obsidian/
+/.config/Youtube/
 
 # TODO check my own executables
 /.local/bin/
@@ -105,3 +114,7 @@
 /.config/GIMP/
 /.config/VirtualBox/
 /.config/MyOffice*
+/.config/remmina/
+/.continue/
+/.cursor/
+/.vscode-oss/
