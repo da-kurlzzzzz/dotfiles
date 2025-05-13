@@ -32,6 +32,7 @@
 /.config/transmission-daemon/stats.json
 /.config/transmission-daemon/dht.dat
 /.i3/i3-resurrect/
+/.ranger/
 /.tmux/resurrect/
 
 # local multiple display setup
@@ -118,3 +119,4 @@
 /.continue/
 /.cursor/
 /.vscode-oss/
+/.vimrc
