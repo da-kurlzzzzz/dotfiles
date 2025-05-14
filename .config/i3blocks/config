@@ -4,7 +4,7 @@ interval=1
 command=./speed.sh
 
 [ping]
-command=ping >/dev/null 2>&1 -W9 -c1 archlinux.org || printf "network down\n\n#FF0000\n#000000\n"
+command=ping >/dev/null 2>&1 -W9 -c1 8.8.8.8 || printf "network down\n\n#FF0000\n#000000\n"
 interval=10
 
 [sda]
