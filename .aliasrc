@@ -38,6 +38,7 @@ alias your-students='task recurring +students recur:weekly parent: rc.dateformat
 alias your-pending='task li -myself'
 alias note='$EDITOR $(date +%F)-notes.md'
 alias pico='picocom -b 115200 /dev/ttyUSB0'
+alias prsync='rsync -Rah --append --info=PROGRESS2'
 
 # colors
 alias diff='diff --color=auto'
