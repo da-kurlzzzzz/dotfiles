@@ -31,7 +31,9 @@ bindsym F1 exec qalculate-gtk
 for_window [title="Qalculate!"] floating enable
 # F2 is for excel
 bindsym F3 exec firefox
-bindsym F4 exec gimp
+bindsym F4 exec gimp -s
+for_window [title="*GIMP"] floating enable
+for_window [title="GNU Image Manipulation Program"] floating enable
 # F5 to reload in browser
 # F6 to edit address in browser
 bindsym F7 exec ~/.local/bin/toggle-headphones.sh
