@@ -8,6 +8,7 @@ alias sc='systemctl'
 alias blc='bluetoothctl'
 alias ..='cd ..'
 alias ...='cd ../..'
+alias findglobal='find 2>/dev/null / -xdev'
 
 # auto cd to ranger directory
 _run-ranger() {
