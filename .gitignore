@@ -120,3 +120,5 @@
 /.cursor/
 /.vscode-oss/
 /.vimrc
+/.java
+/.config/JetBrains/
