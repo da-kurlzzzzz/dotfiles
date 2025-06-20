@@ -40,6 +40,7 @@ alias your-pending='task li -myself'
 alias note='$EDITOR $(date +%F)-notes.md'
 alias pico='picocom -b 115200 /dev/ttyUSB0'
 alias prsync='rsync -Rah --append --info=PROGRESS2'
+alias lsblks='lsblk -o name,pttype,fstype,fsver,label,size,fssize,fsused,fsavail,fsuse%,mountpoints'
 
 # colors
 alias diff='diff --color=auto'
