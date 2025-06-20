@@ -38,7 +38,7 @@ for_window [title="GNU Image Manipulation Program"] floating enable
 # F6 to edit address in browser
 bindsym F7 exec ~/.local/bin/toggle-headphones.sh
 # F8 is host key in VirtualBox
-bindsym F9 exec telegram-desktop
+bindsym F9 exec Telegram
 # F10 is free real estate
 # F11 cannot be imitated with Esc,number so i will not rebind it
 # F12 to open dev console in browser
