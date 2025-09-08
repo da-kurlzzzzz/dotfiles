@@ -1,0 +1,8 @@
+[Match]
+Name=enxce463c13b9a2
+
+[Link]
+ActivationPolicy=manual
+
+[Network]
+DHCP=yes

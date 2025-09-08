@@ -1,7 +1,0 @@
-# this is just a default and should be adapted
-
-[Match]
-Name=*
-
-[Network]
-DHCP=yes
