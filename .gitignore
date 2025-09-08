@@ -31,6 +31,7 @@
 /.config/transmission-daemon/torrents/
 /.config/transmission-daemon/stats.json
 /.config/transmission-daemon/dht.dat
+/.config/transmission-daemon/bandwidth-groups.json
 /.i3/i3-resurrect/
 /.ranger/
 /.tmux/resurrect/
@@ -66,7 +67,10 @@
 /.config/Youtube/
 
 # TODO check my own executables
-/.local/bin/
+/.local/bin/pip*
+/.local/bin/pri*
+/.local/bin/py*
+/.local/bin/*python*
 /.zsh-vi-mode/
 
 # maybe i will add their configs later...
