@@ -17,11 +17,11 @@ ROOTDIR := $(MYDIR)/rootfiles
 	sudo cp -r $< $@
 
 populate_files=.aliasrc .bash_profile .bashrc .config/htop/htoprc .config/ranger/rc.conf .config/ranger/rifle.conf .envrc .hushlogin .inputrc .profile .ssh/config .vim/defaults.vim .vim/keymap/russian-jcukenwin-custom.vim .vim/pack/tpope/start/sensible/plugin/sensible.vim .vim/skel/c .vim/skel/cpp .vim/skel/html .vim/skel/markdown .vim/skel/python .vim/skel/sh .vim/vimrc
-~/.cache/archive.tar: ~/.git/HEAD ~/.ranger/* ~/.zsh-vi-mode/*
+~/.cache/archive.tar: ~/.git/HEAD ~/.ranger/*
 	git archive --format=tar -o $@ HEAD
 	tar -cf $@ $(populate_files)
 	ln -sf ../../.ranger/ranger.py ~/.local/bin/ranger
-	tar -rf $@ .ranger .zsh-vi-mode .local/bin/ranger
+	tar -rf $@ .ranger .local/bin/ranger
 	rm ~/.local/bin/ranger
 
 ~/.cache/archive.tar.gz: ~/.cache/archive.tar
