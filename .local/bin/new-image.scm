@@ -1,0 +1,8 @@
+(let* ((size 1024)
+       (image (car (gimp-image-new size size RGB)))
+       (layer (car (gimp-layer-new image "layer" size size RGB-IMAGE 100 LAYER-MODE-NORMAL)))
+      )
+  (gimp-image-insert-layer image layer 0 0)
+  (gimp-drawable-fill layer FILL-BACKGROUND)
+  (gimp-display-new image)
+)
