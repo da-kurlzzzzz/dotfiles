@@ -1,5 +1,8 @@
 interval=1
 
+[vpn]
+command=systemctl list-units --state=running "openvpn-client@*" | awk -F '[@.]' '/@/{print $2}'
+
 [speed]
 command=./speed.sh
 
