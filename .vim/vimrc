@@ -84,6 +84,11 @@ xmap ; :
 nnoremap ;; ;
 xnoremap ;; ;
 
+map [[ ?{<CR>w99[{:nohlsearch<CR>
+map ][ /}<CR>b99]}:nohlsearch<CR>
+map ]] j0[[%/{<CR>:nohlsearch<CR>
+map [] k$][%?}<CR>:nohlsearch<CR>
+
 " skeleton files
 let SKELDIR = $HOME."/.vim/skel"
 if !isdirectory(SKELDIR)
