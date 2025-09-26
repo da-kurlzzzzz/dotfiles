@@ -11,13 +11,13 @@ compinit
 # git integration
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git
-zstyle ':vcs_info:*' formats '%F{green}%r%f'
+zstyle ':vcs_info:*' formats '%F{green}%r (%b)%f'
 precmd() { vcs_info }
 setopt prompt_subst
 
 # this is messy, as are all PS1s
 PROMPT='%F{blue}%B%n%b%f@%m %2~ %# '
-RPROMPT='${vcs_info_msg_0_}%(?.. ret:%F{red}%B%?%b%f)$([ ! -z $RANGER_LEVEL ] && printf " R")'
+RPROMPT='$([ "$(git rev-parse --show-toplevel)" = "/home/$USER" ] || echo $vcs_info_msg_0_)%(?.. ret:%F{red}%B%?%b%f)$([ ! -z $RANGER_LEVEL ] && printf " R")'
 
 # directory navigation
 
