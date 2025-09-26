@@ -4,24 +4,46 @@ font pango:Monospace 8
 
 # Custom bindings start here
 
+set $execnoid exec --no-startup-id
+
 # Use pactl to adjust volume in PulseAudio.
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+set $volume_up pactl set-sink-volume @DEFAULT_SINK@ +10%
+set $volume_dn pactl set-sink-volume @DEFAULT_SINK@ -10%
+set $volume_mu pactl set-sink-mute @DEFAULT_SINK@ toggle
+set $mic_mute pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym XF86AudioRaiseVolume $execnoid $volume_up && $refresh_i3status
+bindsym KP_Up                $execnoid $volume_up && $refresh_i3status
+bindsym XF86AudioLowerVolume $execnoid $volume_dn && $refresh_i3status
+bindsym KP_Down              $execnoid $volume_dn && $refresh_i3status
+bindsym XF86AudioMute        $execnoid $volume_mu && $refresh_i3status
+bindsym KP_Insert            $execnoid $volume_mu && $refresh_i3status
+bindsym XF86AudioMicMute     $execnoid $mic_mute  && $refresh_i3status
+bindsym KP_Delete            $execnoid $mic_mute  && $refresh_i3status
 
 # Use playerctl to control media players
-bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
+set $play_paus playerctl play-pause
+set $play_next playerctl next
+set $play_prev playerctl previous
+bindsym XF86AudioPlay $execnoid $play_paus
+bindsym KP_Begin      $execnoid $play_paus
+bindsym XF86AudioNext $execnoid $play_next
+bindsym KP_Right      $execnoid $play_next
+bindsym XF86AudioPrev $execnoid $play_prev
+bindsym KP_Left       $execnoid $play_prev
 
 # Use brightnessctl to control monitor backlight
-bindsym XF86MonBrightnessUp exec brightnessctl -n -e set +11%
-bindsym XF86MonBrightnessDown exec brightnessctl -n -e set 11%-
+set $bright_up brightnessctl -n -e set +11%
+set $bright_dn brightnessctl -n -e set 11%-
+bindsym XF86MonBrightnessUp   $execnoid $bright_up
+# also known as PgUp
+bindsym KP_Prior              $execnoid $bright_up
+bindsym XF86MonBrightnessDown $execnoid $bright_dn
+# also known as PgDn
+bindsym KP_Next               $execnoid $bright_dn
 
 # Use import and xclip to take screenshots
-bindsym --release Print exec --no-startup-id "xdotool mousemove_relative 1 0; import png:- | xclip -selection clipboard -t image/png"
-bindsym --release Alt_R exec --no-startup-id "import -window $(i3-msg -t get_tree | jq 'recurse((.nodes, .floating_nodes)[]) | select(.focused).window') png:- | xclip -selection clipboard -t image/png"
+bindsym --release Print $execnoid "xdotool mousemove_relative 1 0; import png:- | xclip -selection clipboard -t image/png"
+bindsym --release Alt_R $execnoid "import -window $(i3-msg -t get_tree | jq 'recurse((.nodes, .floating_nodes)[]) | select(.focused).window') png:- | xclip -selection clipboard -t image/png"
 
 # Use systemctl to hibernate and sleep
 bindsym --release $mod+Shift+s exec systemctl hibernate
@@ -46,18 +68,18 @@ bindsym F9 exec Telegram
 # Autostart starts here
 
 # automounting
-exec --no-startup-id "udiskie"
+exec udiskie
 # screen must be on
-exec --no-startup-id "xset s off -dpms"
+exec xset s off -dpms
 # strange bell is now off
-exec --no-startup-id "xset -b"
+exec xset -b
 # hide cursor when it is not needed
-exec --no-startup-id "unclutter"
+exec unclutter
 
-exec --no-startup-id "xmodmap -e 'keycode 135 = Super_R' && xset -r 135"
-exec --no-startup-id "xss-lock --transfer-sleep-lock --session=$XDG_SESSION_ID -- i3lock --nofork --color=000000"
+exec xmodmap -e 'keycode 135 = Super_R' && xset -r 135
+exec xss-lock --transfer-sleep-lock --session=$XDG_SESSION_ID -- i3lock --nofork --color=000000
 
-exec --no-startup-id "autorandr -l $(cat /etc/hostname)"
+exec autorandr -l $(cat /etc/hostname)
 include ~/.config/i3/displays.conf
 
 # Defaults start here
@@ -82,7 +104,7 @@ bindsym $mod+Shift+e exit
 bindsym $mod+Shift+z exec i3lock --color=000000
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id rofi -show run
+bindsym $mod+d $execnoid rofi -show run
 
 # Navigation starts here
 
