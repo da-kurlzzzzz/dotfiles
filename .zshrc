@@ -17,7 +17,7 @@ setopt prompt_subst
 
 # this is messy, as are all PS1s
 PROMPT='%F{blue}%B%n%b%f@%m %2~ %# '
-RPROMPT='$([ "$(git rev-parse --show-toplevel)" = "/home/$USER" ] || echo $vcs_info_msg_0_)%(?.. ret:%F{red}%B%?%b%f)$([ ! -z $RANGER_LEVEL ] && printf " R")'
+RPROMPT='$([ "$(git 2>/dev/null rev-parse --show-toplevel)" = "/home/$USER" ] || echo $vcs_info_msg_0_)%(?.. ret:%F{red}%B%?%b%f)$([ ! -z $RANGER_LEVEL ] && printf " R")'
 
 # directory navigation
 
