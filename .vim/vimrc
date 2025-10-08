@@ -72,6 +72,7 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <expr> k (v:count > 1 ? "m'" . v:count : '') . 'k'
 nnoremap <expr> j (v:count > 1 ? "m'" . v:count : '') . 'j'
 nnoremap <silent> <C-W>v :vertical new<CR>
+nnoremap <Tab> gt
 
 " per word undo
 inoremap <Space> <C-G>u<Space>
@@ -103,6 +104,9 @@ set iminsert=0
 
 " merge clipboard with system
 set clipboard^=unnamed,unnamedplus
+
+" do not touch clipboard when pasting over in visual mode
+xnoremap p P
 
 " ctrl-z sometimes messes up my terminal
 nnoremap <C-Z> <nop>
