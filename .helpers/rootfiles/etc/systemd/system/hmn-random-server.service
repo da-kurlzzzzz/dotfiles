@@ -1,0 +1,10 @@
+[Unit]
+Description=Start a random vpn client from HideMyName provider
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/local/bin/hmn-random-server
+ExecStop=/usr/local/bin/hmn-random-server stop

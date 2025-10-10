@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+# stop all HideMyName vpns
+systemctl stop "openvpn-client@hmn-*"
+
+[ "$1" = stop ] && exit 0
+
+# find a random conf file and extract its name without .conf
+VPN=$(find /etc/openvpn/client -type f -name "hmn-*.conf" | shuf -n 1 | awk -F '[/.]' '{print $(NF-1)}')
+
+[ -z "$VPN" ] && { echo "no hmn-*.conf files found in /etc/openvpn/client"; exit 1; }
+
+echo trying to obtain ip address over vpn
+
+# start the one we found
+systemctl start openvpn-client@$VPN && curl --connect-timeout 3 icanhazip.com
