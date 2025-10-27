@@ -45,6 +45,7 @@ bindkey '^z' _fg-ctrl-z
 REPORTTIME=
 ZLE_SPACE_SUFFIX_CHARS=$'|'
 ZLE_REMOVE_SUFFIX_CHARS=$')'
+zstyle ':completion:*' rehash true
 
 setopt globstarshort
 setopt nocaseglob
