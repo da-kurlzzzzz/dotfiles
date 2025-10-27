@@ -21,6 +21,22 @@ _mkcd() {
 }
 alias mkcd='_mkcd'
 
+_passs() {
+    cmd=(ssh $@)
+    ${cmd[@]} -G | awk '/^tag /{print $2}' | read tag
+    if [ ! -z "$tag" ]
+    then
+        f="$HOME/.ssh/passs/$tag"
+        if [ -f "$f" ]
+        then
+            cmd=(sshpass -f $f ${cmd[@]})
+        fi
+    fi
+    ${cmd[@]}
+}
+
+alias passs='_passs'
+
 # this is just to be able to
 # $ watch <aliased command>
 # $ sudo <aliased command>

@@ -49,7 +49,8 @@
 /.ssh/id_*
 /.ssh/known_hosts*
 /.ssh/authorized_keys
-/.ssh/job.config
+/.ssh/*job*
+/.ssh/passs/
 /.config/systemd/user/*.target.wants/
 /.config/task/*.pem
 /.config/torbrowser/
