@@ -1,6 +1,17 @@
 source ~/.aliasrc
 source ~/.envrc
 
+# for wonky terminals over serial line
+rsz() {
+    old=$(stty -g)
+    stty -echo
+    printf '\033[18t'
+    IFS=';' read -d t _ rows cols _
+    stty "$old"
+    stty cols "$cols" rows "$rows"
+}
+[ "$(tty)" = /dev/ttyS0 ] && trap rsz DEBUG
+
 # for wonky terminals over ssh
 export TERM=xterm-256color
 
