@@ -128,3 +128,5 @@
 /.java
 /.config/JetBrains/
 /.docker/
+/.config/wireshark/
+/.config/termshark/
