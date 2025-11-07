@@ -83,8 +83,6 @@
 /.config/gtk-3.0/
 /.config/rclone/rclone.conf
 /.config/task/taskrc
-/.config/user-dirs.dirs
-/.config/user-dirs.locale
 /.vim/coc-settings.json
 /.config/qt5ct/
 /.config/qt6ct/
