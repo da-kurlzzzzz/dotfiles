@@ -16,6 +16,10 @@ set hlsearch
 " this just feels more natural
 set splitbelow splitright
 
+if &diff
+    set noreadonly
+endif
+
 " warning: spaces person
 " also, shiftwidth and softtabstop use neat tricks to keep them equal to
 " tabstop.  See :help
