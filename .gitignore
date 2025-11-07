@@ -1,7 +1,5 @@
 # they are called DOTfiles for a reason
 /[^.]*
-!/LICENSE
-!/README.md
 
 # temporary directories, no configs there
 /.cache/
