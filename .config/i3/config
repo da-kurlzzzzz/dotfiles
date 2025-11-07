@@ -67,8 +67,6 @@ bindsym F9 exec Telegram
 
 # Autostart starts here
 
-# automounting
-exec udiskie
 # screen must be on
 exec xset s off -dpms
 # strange bell is now off
