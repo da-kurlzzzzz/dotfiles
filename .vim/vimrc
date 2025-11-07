@@ -77,6 +77,8 @@ nnoremap <expr> k (v:count > 1 ? "m'" . v:count : '') . 'k'
 nnoremap <expr> j (v:count > 1 ? "m'" . v:count : '') . 'j'
 nnoremap <silent> <C-W>v :vertical new<CR>
 nnoremap <Tab> gt
+" <Tab> and <C-I> are the same, so we make a new mapping
+nnoremap <C-P> <C-I>
 
 " per word undo
 inoremap <Space> <C-G>u<Space>
