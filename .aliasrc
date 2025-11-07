@@ -1,6 +1,6 @@
 alias ls='ls --color=auto'
-alias l='ls -l'
-alias ll='ls --group-directories-first -lhA'
+alias l='ls -lh'
+alias ll='l --group-directories-first -A'
 alias r='. ranger'
 alias watch='watch '
 alias sudo='sudo '
