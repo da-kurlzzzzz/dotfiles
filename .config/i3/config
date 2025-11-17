@@ -1,4 +1,5 @@
 set $mod Mod4
+set $alt Mod1
 
 font pango:Monospace 8
 
@@ -90,6 +91,7 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+Return exec rofi -show ssh
+bindsym $mod+$alt+Return exec alacritty -e zsh -c "tmux attach -t $(tmux list-sessions | grep -v attached | tail -n 1 | cut -d: -f1)"
 
 # kill focused window
 bindsym $mod+Shift+q kill

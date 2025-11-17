@@ -1,0 +1,10 @@
+[Unit]
+Description=Start tmux server without sessions
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/tmux start-server
+ExecStop=/usr/bin/tmux kill-server
+
+[Install]
+WantedBy=default.target
