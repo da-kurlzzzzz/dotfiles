@@ -57,6 +57,7 @@ alias note='$EDITOR $(date +%F)-notes.md'
 alias pico='picocom -b 115200 /dev/ttyUSB0'
 alias prsync='rsync -Rah --append --info=PROGRESS2'
 alias lsblks='lsblk -o name,pttype,fstype,fsver,label,size,fssize,fsused,fsavail,fsuse%,mountpoints'
+alias lib-miss='unset REPORTTIME; sudo lsof 2>/dev/null +c 0 | grep "DEL.*lib" | awk "1 { print \$1 \": \" \$NF }" | sort -u; REPORTTIME='
 
 # colors
 alias diff='diff --color=auto'
