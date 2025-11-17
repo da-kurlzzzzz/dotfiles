@@ -56,6 +56,10 @@ let &t_SI="\e[6 q"
 let &t_EI="\e[2 q"
 set background=dark
 
+" tricks for showing indents. spaces are handled by indentLine plugin
+set list listchars=tab:\¦\ 
+highlight SpecialKey ctermfg=DarkGray
+
 nnoremap <SPACE> <Nop>
 let mapleader=" "
 nnoremap <silent> <Leader>/ :nohlsearch<CR>
