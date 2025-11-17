@@ -127,8 +127,12 @@ set foldmethod=marker
 
 let g:netrw_banner=0
 let g:netrw_liststyle=3
+" open files in new tabs by default
+let g:netrw_browse_split=3
 " let g:netrw_bufsettings='noma nomod nonu nowrap ro nobl'
   let g:netrw_bufsettings='noma nomod nu   nowrap ro nobl'
+" maybe i will drop netrw after all
+nnoremap <silent> <Leader>r :execute 'silent !tmux switch-client -t ' . v:servername <bar> redraw!<CR>
 
 let g:user_emmet_mode='i'
 let g:user_emmet_leader_key='<C-E>'
