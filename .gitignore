@@ -93,7 +93,6 @@
 /.config/QtProject.conf
 /.config/dconf/
 /.config/xreader/
-/.config/mimeapps.list
 /.cargo/
 /.config/VK/
 /.config/chromium/
