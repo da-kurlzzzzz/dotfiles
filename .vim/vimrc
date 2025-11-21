@@ -86,7 +86,6 @@ nnoremap <C-P> <C-I>
 
 " per word undo
 inoremap <Space> <C-G>u<Space>
-inoremap <CR> <C-G>u<CR>
 
 " swap meaning of : and ;
 nmap ; :
@@ -120,6 +119,24 @@ nnoremap <C-Z> <nop>
 
 " trying out folds
 set foldmethod=marker
+
+" auto braces
+inoremap { {}<esc>i
+inoremap ( ()<esc>i
+inoremap [ []<esc>i
+inoremap ' ''<esc>i
+inoremap " ""<esc>i
+
+function! s:SmartEnter()
+    let line = getline('.')
+    let col = col('.') - 1
+    if line[col-1] == '{' && line[col] == '}'
+        return "\<cr>\<C-o>O"
+    endif
+    return "\<cr>"
+endfunction
+
+inoremap <CR> <C-G>u<C-r>=<SID>SmartEnter()<CR>
 
 let g:netrw_banner=0
 let g:netrw_liststyle=3
