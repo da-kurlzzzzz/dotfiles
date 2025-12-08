@@ -55,7 +55,7 @@ for_window [title="Qalculate!"] floating enable
 # F2 is for excel
 bindsym F3 exec firefox
 bindsym F4 exec gimp --batch-interpreter plug-in-script-fu-eval -sf -b "$(cat ~/.local/bin/new-image.scm)"
-for_window [title="*GIMP"] floating enable
+for_window [title=".*GIMP"] floating enable
 for_window [title="GNU Image Manipulation Program"] floating enable
 # F5 to reload in browser
 # F6 to edit address in browser
