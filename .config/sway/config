@@ -1,0 +1,233 @@
+set $mod Mod4
+set $alt Mod1
+
+font pango:Monospace 8
+
+# Custom bindings start here
+
+set $execnoid exec --no-startup-id
+
+# Use pactl to adjust volume in PulseAudio.
+set $volume_up pactl set-sink-volume @DEFAULT_SINK@ +10%
+set $volume_dn pactl set-sink-volume @DEFAULT_SINK@ -10%
+set $volume_mu pactl set-sink-mute @DEFAULT_SINK@ toggle
+set $mic_mute pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym XF86AudioRaiseVolume $execnoid $volume_up && $refresh_i3status
+bindsym KP_Up                $execnoid $volume_up && $refresh_i3status
+bindsym XF86AudioLowerVolume $execnoid $volume_dn && $refresh_i3status
+bindsym KP_Down              $execnoid $volume_dn && $refresh_i3status
+bindsym XF86AudioMute        $execnoid $volume_mu && $refresh_i3status
+bindsym KP_Insert            $execnoid $volume_mu && $refresh_i3status
+bindsym XF86AudioMicMute     $execnoid $mic_mute  && $refresh_i3status
+bindsym KP_Delete            $execnoid $mic_mute  && $refresh_i3status
+
+# Use playerctl to control media players
+set $play_paus playerctl play-pause
+set $play_next playerctl next
+set $play_prev playerctl previous
+bindsym XF86AudioPlay $execnoid $play_paus
+bindsym KP_Begin      $execnoid $play_paus
+bindsym XF86AudioNext $execnoid $play_next
+bindsym KP_Right      $execnoid $play_next
+bindsym XF86AudioPrev $execnoid $play_prev
+bindsym KP_Left       $execnoid $play_prev
+
+# Use brightnessctl to control monitor backlight
+set $bright_up brightnessctl -n -e set +11%
+set $bright_dn brightnessctl -n -e set 11%-
+bindsym XF86MonBrightnessUp   $execnoid $bright_up
+# also known as PgUp
+bindsym KP_Prior              $execnoid $bright_up
+bindsym XF86MonBrightnessDown $execnoid $bright_dn
+# also known as PgDn
+bindsym KP_Next               $execnoid $bright_dn
+
+# Use import and xclip to take screenshots
+bindsym --release Print $execnoid "xdotool mousemove_relative 1 0; import png:- | xclip -selection clipboard -t image/png"
+bindsym --release Alt_R $execnoid "import -window $(i3-msg -t get_tree | jq 'recurse((.nodes, .floating_nodes)[]) | select(.focused).window') png:- | xclip -selection clipboard -t image/png"
+
+# Use systemctl to hibernate and sleep
+bindsym --release $mod+Shift+s exec systemctl hibernate
+bindsym --release $mod+Shift+w exec systemctl suspend
+
+bindsym F1 exec qalculate-gtk
+for_window [title="Qalculate!"] floating enable
+# F2 is for excel
+bindsym F3 exec firefox
+bindsym F4 exec gimp --batch-interpreter plug-in-script-fu-eval -sf -b "$(cat ~/.local/bin/new-image.scm)"
+for_window [title=".*GIMP"] floating enable
+for_window [title="GNU Image Manipulation Program"] floating enable
+# F5 to reload in browser
+# F6 to edit address in browser
+bindsym F7 exec ~/.local/bin/toggle-headphones.sh
+# F8 is host key in VirtualBox
+bindsym F9 exec Telegram
+# F10 is free real estate
+# F11 cannot be imitated with Esc,number so i will not rebind it
+# F12 to open dev console in browser
+
+# Autostart starts here
+
+# screen must be on
+exec xset s off -dpms
+# strange bell is now off
+exec xset -b
+# hide cursor when it is not needed
+exec unclutter
+# remember per-window keyboard layout
+exec kbdd
+
+exec xmodmap -e 'keycode 135 = Super_R' && xset -r 135
+set $locker i3lock --color=000000
+exec xss-lock --transfer-sleep-lock --session=$XDG_SESSION_ID -- $locker --nofork
+
+exec autorandr -l $(cat /etc/hostname)
+include ~/.config/i3/displays.conf
+
+# Defaults start here
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# start a terminal
+set $terminal alacritty
+bindsym $mod+Return exec $terminal
+bindsym $mod+Shift+Return exec rofi -show ssh
+bindsym $mod+$alt+Return exec $terminal -e zsh -c "tmux attach -t $(tmux list-sessions | grep -v attached | tail -n 1 | cut -d: -f1)"
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exit
+# lock screen (without logging out
+bindsym $mod+Shift+z exec $locker
+
+# start dmenu (a program launcher)
+bindsym $mod+d $execnoid rofi -show run
+
+# Navigation starts here
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# split in horizontal orientation
+bindsym $mod+n split h
+
+# split in vertical orientation
+bindsym $mod+v split v, layout stacking
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+bindsym $mod+z focus child
+
+focus_follows_mouse no
+workspace_auto_back_and_forth yes
+focus_wrapping workspace
+
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+for_window [window_role="PictureInPicture"] sticky enable, move scratchpad, scratchpad show
+
+# Bar starts here
+
+# Start i3bar to display a workspace bar
+set $refresh_i3status killall -44 i3blocks
+bar {
+        status_command exec i3blocks
+}
+
+# Boring stuff starts here
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# switch to workspace
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
