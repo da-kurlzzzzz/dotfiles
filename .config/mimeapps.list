@@ -1,10 +1,11 @@
 [Default Applications]
-x-scheme-handler/http=firefox.desktop
-x-scheme-handler/https=firefox.desktop
-inode/directory=ranger.desktop
+x-scheme-handler/http=firefox.desktop;
+x-scheme-handler/https=firefox.desktop;
+inode/directory=ranger.desktop;
 text/html=vim.desktop;firefox.desktop;
-text/*=vim.desktop
-application/pdf=xreader.desktop
-image/*=feh.desktop
+text/*=vim.desktop;
+application/pdf=xreader.desktop;
+image/*=feh.desktop;
 x-scheme-handler/terminal=Alacritty.desktop;
 x-scheme-handler/tonsite=org.telegram.desktop.desktop;
+application/x-shellscript=vim.desktop;
