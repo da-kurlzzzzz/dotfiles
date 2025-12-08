@@ -42,9 +42,13 @@ bindsym --to-code XF86MonBrightnessDown $execnoid $bright_dn
 # also known as PgDn
 bindsym --to-code KP_Next               $execnoid $bright_dn
 
+for_window [title="CopyQ"] floating enable
+exec copyq --start-server
+bindsym --to-code $mod+Shift+v exec copyq show
+
 # Use import and xclip to take screenshots
-bindsym --release Print $execnoid "xdotool mousemove_relative 1 0; import png:- | xclip -selection clipboard -t image/png"
-bindsym --release Alt_R $execnoid "import -window $(i3-msg -t get_tree | jq 'recurse((.nodes, .floating_nodes)[]) | select(.focused).window') png:- | xclip -selection clipboard -t image/png"
+bindsym --to-code --release Print $execnoid grim -g "$(slurp)" - | copyq copy image/png -
+bindsym --to-code --release Alt_R $execnoid swaymsg -t get_tree | jq -j '.. | select(.type?) | select(.focused).rect | "\(.x),\(.y) \(.width)x\(.height)"' | grim -g - - | copyq copy image/png -
 
 # Use systemctl to hibernate and sleep
 bindsym --to-code $mod+Shift+s exec systemctl hibernate
@@ -73,13 +77,13 @@ exec xset s off -dpms
 # strange bell is now off
 exec xset -b
 # hide cursor when it is not needed
-exec unclutter
+seat * hide_cursor 3000
 # remember per-window keyboard layout
-exec kbdd
+exec swaykbdd
 
 exec xmodmap -e 'keycode 135 = Super_R' && xset -r 135
-set $locker i3lock --color=000000
-exec xss-lock --transfer-sleep-lock --session=$XDG_SESSION_ID -- $locker --nofork
+set $locker swaylock --color=000000 --hide-keyboard-layout --indicator-radius=90
+exec swayidle -w before-sleep "$locker"
 
 exec autorandr -l $(cat /etc/hostname)
 include ~/.config/i3/displays.conf
