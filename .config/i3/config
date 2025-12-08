@@ -78,7 +78,8 @@ exec unclutter
 exec kbdd
 
 exec xmodmap -e 'keycode 135 = Super_R' && xset -r 135
-exec xss-lock --transfer-sleep-lock --session=$XDG_SESSION_ID -- i3lock --nofork --color=000000
+set $locker i3lock --color=000000
+exec xss-lock --transfer-sleep-lock --session=$XDG_SESSION_ID -- $locker --nofork
 
 exec autorandr -l $(cat /etc/hostname)
 include ~/.config/i3/displays.conf
@@ -89,9 +90,10 @@ include ~/.config/i3/displays.conf
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+set $terminal alacritty
+bindsym $mod+Return exec $terminal
 bindsym $mod+Shift+Return exec rofi -show ssh
-bindsym $mod+$alt+Return exec alacritty -e zsh -c "tmux attach -t $(tmux list-sessions | grep -v attached | tail -n 1 | cut -d: -f1)"
+bindsym $mod+$alt+Return exec $terminal -e zsh -c "tmux attach -t $(tmux list-sessions | grep -v attached | tail -n 1 | cut -d: -f1)"
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -103,7 +105,7 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exit
 # lock screen (without logging out
-bindsym $mod+Shift+z exec i3lock --color=000000
+bindsym $mod+Shift+z exec $locker
 
 # start dmenu (a program launcher)
 bindsym $mod+d $execnoid rofi -show run
