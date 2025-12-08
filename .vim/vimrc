@@ -112,7 +112,7 @@ function! LoadSkeleton()
             call deletebufline(bufname('%'), '$')
             call cursor(4, 1)
         else
-            exec ":r ".SKELDIR."/".&filetype | 0delete _
+            silent! exec ":r ".SKELDIR."/".&filetype | 0delete _
         endif
 endfunction
 
