@@ -242,6 +242,8 @@ input type:touchpad {
     drag_lock disable
 }
 
+for_window [shell="xwayland"] title_format "[XWayland] %title"
+
 input type:keyboard {
     xkb_layout "us,ru"
     xkb_options "grp:shifts_toggle,grp_led:caps,caps:escape,ctrl:swap_rwin_rctl"
