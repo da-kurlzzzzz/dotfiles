@@ -59,6 +59,7 @@
 /.wine/
 /.config/menus/
 /.anydesk/
+/.netrc
 
 # electron apps have too many things
 /.config/Code - OSS/
