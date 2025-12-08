@@ -25,6 +25,7 @@
 /.viminfo*
 /.zcompdump*
 /.vim/undo/
+/.vim/*tags
 /.config/transmission-daemon/resume/
 /.config/transmission-daemon/torrents/
 /.config/transmission-daemon/stats.json
