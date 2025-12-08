@@ -35,6 +35,7 @@ runtime ftplugin/man.vim
 set keywordprg=:Man
 
 " see man ctags
+set tags+=~/.vim/globaltags
 set tags+=~/.vim/tags
 
 " silent make
@@ -94,7 +95,7 @@ xmap ; :
 nnoremap ;; ;
 xnoremap ;; ;
 
-autocmd BufWritePost *.c,*.h silent! !ctags --recurse=yes --exclude=.git --exclude=build
+autocmd BufWritePost *.c,*.h silent! !ctags -f ~/.vim/tags
 
 function! LoadSkeleton()
         " skeleton files

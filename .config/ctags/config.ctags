@@ -1,0 +1,46 @@
+--recurse=yes
+--maxdepth=2
+--tag-relative=never
+--append=yes
+--exclude=.git
+--exclude=build
+-I __attribute__
+-I __attribute_deprecated__
+-I __attribute_format_arg__+
+-I __attribute_format_strfmon__+
+-I __attribute_malloc__
+-I __attribute_noinline__
+-I __attribute_pure__
+-I __attribute_used__
+-I __attribute_warn_unused_result__
+-I __attribute_alloc_size__+
+-I __attribute_const__
+-I __attribute_artificial__
+-I __wur
+-I __THROW
+-I __THROWNL
+-I __BEGIN_DECLS
+-I __END_DECLS
+-I __BEGIN_NAMESPACE_STD
+-I __END_NAMESPACE_STD
+-I __USING_NAMESPACE_STD+
+-I __BEGIN_NAMESPACE_C99
+-I __END_NAMESPACE_C99
+-I __USING_NAMESPACE_C99+
+-I __warndecl+
+-I __warnattr+
+-I __errordecl+
+-I __flexarr=[]
+-I __fortify_function
+-I __REDICRECT+
+-I __REDIRECT_NTH+
+-I __REDIRECT_NTHNL+
+-I __ASMNAME+
+-I __ASMNAME2+
+-I __nonnull+
+-I __always_inline
+-I __extern_inline=extern
+-I __extern_always_inline=extern
+-I __extension__
+-I __restrict
+-I __restrict_arr
