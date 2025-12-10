@@ -85,9 +85,6 @@ exec xmodmap -e 'keycode 135 = Super_R' && xset -r 135
 set $locker swaylock --color=000000 --hide-keyboard-layout --indicator-radius=90
 exec swayidle -w before-sleep "$locker"
 
-exec autorandr -l $(cat /etc/hostname)
-include ~/.config/i3/displays.conf
-
 # Defaults start here
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -248,3 +245,5 @@ input type:keyboard {
     xkb_layout "us,ru"
     xkb_options "grp:shifts_toggle,grp_led:caps,caps:escape,ctrl:swap_rwin_rctl"
 }
+
+include ~/.config/sway/config.d/*
