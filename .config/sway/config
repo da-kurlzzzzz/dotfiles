@@ -246,4 +246,5 @@ input type:keyboard {
     xkb_options "grp:shifts_toggle,grp_led:caps,caps:escape,ctrl:swap_rwin_rctl"
 }
 
+include /etc/sway/config.d/*
 include ~/.config/sway/config.d/*
