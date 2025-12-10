@@ -160,7 +160,7 @@ focus_wrapping workspace
 
 bindsym --to-code $mod+Shift+minus move scratchpad
 bindsym --to-code $mod+minus scratchpad show
-for_window [window_role="PictureInPicture"] sticky enable, move scratchpad, scratchpad show
+for_window [title="Picture-in-Picture"] sticky enable, move scratchpad, scratchpad show
 
 # Bar starts here
 
