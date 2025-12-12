@@ -1,5 +1,23 @@
 #!/usr/bin/env bash
 
+mime=
+for f in "$@"
+do
+    [ -f "$f" ] || continue
+    mime=$(file -ib "$f")
+    case "$mime" in
+        text/*)
+            continue
+            ;;
+        *)
+            echo unsupported mime type
+            echo "$f:" "$mime"
+            echo maybe try xdg-open
+            exit 1
+            ;;
+    esac
+done
+
 pane=$(tmux display-message -p "#S:#I.#P")
 [ -z "$pane" ] || vim_server_pid=$(pgrep -f "servername $pane")
 [ -z "$vim_server_pid" ] && cmd="tmux split-window -l 80%"
