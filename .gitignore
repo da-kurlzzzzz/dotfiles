@@ -126,6 +126,7 @@
 /.config/copyq/copyq_tab_*
 /.config/copyq/themes/
 /.config/copyq/.copyq_s
+/.config/copyq/copyq.pub
 /.config/VirtualBox/
 /.config/MyOffice*
 /.config/remmina/
