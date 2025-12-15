@@ -117,6 +117,15 @@
 /.config/coc/
 /.config/configstore/
 /.config/GIMP/
+/.config/copyq/copyq-commands.ini
+/.config/copyq/copyq-monitor.ini
+/.config/copyq/copyq-filter.ini
+/.config/copyq/copyq.lock
+/.config/copyq/copyq_geometry.ini
+/.config/copyq/copyq_tabs.ini
+/.config/copyq/copyq_tab_*
+/.config/copyq/themes/
+/.config/copyq/.copyq_s
 /.config/VirtualBox/
 /.config/MyOffice*
 /.config/remmina/
