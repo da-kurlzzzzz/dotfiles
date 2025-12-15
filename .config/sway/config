@@ -7,7 +7,6 @@ font pango:Monospace 8
 
 set $execnoid exec --no-startup-id
 
-for_window [title="CopyQ"] floating enable
 exec copyq --start-server
 bindsym --to-code $mod+Shift+v exec copyq show
 
@@ -16,12 +15,9 @@ bindsym --to-code $mod+Shift+s exec systemctl hibernate
 bindsym --to-code $mod+Shift+w exec systemctl suspend
 
 bindsym --to-code F1 exec qalculate-gtk
-for_window [title="Qalculate!"] floating enable
 # F2 is for excel
 bindsym --to-code F3 exec firefox
 bindsym --to-code F4 exec gimp --batch-interpreter plug-in-script-fu-eval -sf -b "$(cat ~/.local/bin/new-image.scm)"
-for_window [title=".*GIMP"] floating enable
-for_window [title="GNU Image Manipulation Program"] floating enable
 # F5 to reload in browser
 # F6 to edit address in browser
 # F8 is host key in VirtualBox
@@ -117,8 +113,6 @@ focus_wrapping workspace
 
 bindsym --to-code $mod+Shift+minus move scratchpad
 bindsym --to-code $mod+minus scratchpad show
-for_window [title="Picture-in-Picture"] sticky enable, move scratchpad, scratchpad show
-
 # Bar starts here
 
 # Start i3bar to display a workspace bar
@@ -193,7 +187,6 @@ bindsym --to-code $mod+Shift+8 move container to workspace number $ws8
 bindsym --to-code $mod+Shift+9 move container to workspace number $ws9
 bindsym --to-code $mod+Shift+0 move container to workspace number $ws10
 
-for_window [shell="xwayland"] title_format "[XWayland] %title"
 
 include /etc/sway/config.d/*
 include ~/.config/sway/config.d/*
