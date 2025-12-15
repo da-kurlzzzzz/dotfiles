@@ -9,6 +9,9 @@ do
         text/*)
             continue
             ;;
+        inode/x-empty*)
+            continue
+            ;;
         *)
             echo unsupported mime type
             echo "$f:" "$mime"
