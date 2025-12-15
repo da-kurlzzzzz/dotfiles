@@ -1,5 +1,3 @@
-exec copyq --start-server
-
 # Autostart starts here
 
 # remember per-window keyboard layout
