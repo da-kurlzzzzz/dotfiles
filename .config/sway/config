@@ -11,10 +11,6 @@ for_window [title="CopyQ"] floating enable
 exec copyq --start-server
 bindsym --to-code $mod+Shift+v exec copyq show
 
-# Use import and xclip to take screenshots
-bindsym --to-code --release Print $execnoid grim -g "$(slurp)" - | copyq copy image/png -
-bindsym --to-code --release Alt_R $execnoid swaymsg -t get_tree | jq -j '.. | select(.type?) | select(.focused).rect | "\(.x),\(.y) \(.width)x\(.height)"' | grim -g - - | copyq copy image/png -
-
 # Use systemctl to hibernate and sleep
 bindsym --to-code $mod+Shift+s exec systemctl hibernate
 bindsym --to-code $mod+Shift+w exec systemctl suspend
