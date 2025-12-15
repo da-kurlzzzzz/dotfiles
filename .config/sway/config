@@ -1,48 +1,9 @@
-set $mod Mod4
-set $alt Mod1
-
-font pango:Monospace 8
-
-# Custom bindings start here
-
-set $execnoid exec --no-startup-id
-
 exec copyq --start-server
 
 # Autostart starts here
 
 # remember per-window keyboard layout
 exec swaykbdd
-
-exec xmodmap -e 'keycode 135 = Super_R' && xset -r 135
-set $locker swaylock --color=000000 --hide-keyboard-layout --indicator-radius=90
-
-# Defaults start here
-
-# start a terminal
-set $terminal alacritty
-
-# Navigation starts here
-
-# Bar starts here
-
-# Start i3bar to display a workspace bar
-set $refresh_i3status killall -44 i3blocks
-
-# Boring stuff starts here
-
-# Define names for default workspaces for which we configure key bindings later on.
-# We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
 
 include /etc/sway/config.d/*
 include ~/.config/sway/config.d/*
