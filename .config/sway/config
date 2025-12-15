@@ -197,18 +197,7 @@ bindsym --to-code $mod+Shift+8 move container to workspace number $ws8
 bindsym --to-code $mod+Shift+9 move container to workspace number $ws9
 bindsym --to-code $mod+Shift+0 move container to workspace number $ws10
 
-input type:touchpad {
-    tap enabled
-    natural_scroll enabled
-    drag_lock disable
-}
-
 for_window [shell="xwayland"] title_format "[XWayland] %title"
-
-input type:keyboard {
-    xkb_layout "us,ru"
-    xkb_options "grp:shifts_toggle,grp_led:caps,caps:escape,ctrl:swap_rwin_rctl"
-}
 
 include /etc/sway/config.d/*
 include ~/.config/sway/config.d/*
