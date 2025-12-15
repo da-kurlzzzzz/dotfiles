@@ -7,31 +7,6 @@ font pango:Monospace 8
 
 set $execnoid exec --no-startup-id
 
-# Use pactl to adjust volume in PulseAudio.
-set $volume_up pactl set-sink-volume @DEFAULT_SINK@ +10%
-set $volume_dn pactl set-sink-volume @DEFAULT_SINK@ -10%
-set $volume_mu pactl set-sink-mute @DEFAULT_SINK@ toggle
-set $mic_mute pactl set-source-mute @DEFAULT_SOURCE@ toggle
-bindsym --to-code XF86AudioRaiseVolume $execnoid $volume_up && $refresh_i3status
-bindsym --to-code KP_Up                $execnoid $volume_up && $refresh_i3status
-bindsym --to-code XF86AudioLowerVolume $execnoid $volume_dn && $refresh_i3status
-bindsym --to-code KP_Down              $execnoid $volume_dn && $refresh_i3status
-bindsym --to-code XF86AudioMute        $execnoid $volume_mu && $refresh_i3status
-bindsym --to-code KP_Insert            $execnoid $volume_mu && $refresh_i3status
-bindsym --to-code XF86AudioMicMute     $execnoid $mic_mute  && $refresh_i3status
-bindsym --to-code KP_Delete            $execnoid $mic_mute  && $refresh_i3status
-
-# Use playerctl to control media players
-set $play_paus playerctl play-pause
-set $play_next playerctl next
-set $play_prev playerctl previous
-bindsym --to-code XF86AudioPlay $execnoid $play_paus
-bindsym --to-code KP_Begin      $execnoid $play_paus
-bindsym --to-code XF86AudioNext $execnoid $play_next
-bindsym --to-code KP_Right      $execnoid $play_next
-bindsym --to-code XF86AudioPrev $execnoid $play_prev
-bindsym --to-code KP_Left       $execnoid $play_prev
-
 for_window [title="CopyQ"] floating enable
 exec copyq --start-server
 bindsym --to-code $mod+Shift+v exec copyq show
@@ -53,7 +28,6 @@ for_window [title=".*GIMP"] floating enable
 for_window [title="GNU Image Manipulation Program"] floating enable
 # F5 to reload in browser
 # F6 to edit address in browser
-bindsym --to-code F7 exec ~/.local/bin/toggle-headphones.sh
 # F8 is host key in VirtualBox
 bindsym --to-code F9 exec Telegram
 # F10 is free real estate
