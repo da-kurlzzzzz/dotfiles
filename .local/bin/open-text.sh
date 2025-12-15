@@ -4,7 +4,7 @@ mime=
 for f in "$@"
 do
     [ -f "$f" ] || continue
-    mime=$(file -ib "$f")
+    mime=$(file -Lib "$f")
     case "$mime" in
         text/*)
             continue
