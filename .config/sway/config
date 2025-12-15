@@ -32,16 +32,6 @@ bindsym --to-code KP_Right      $execnoid $play_next
 bindsym --to-code XF86AudioPrev $execnoid $play_prev
 bindsym --to-code KP_Left       $execnoid $play_prev
 
-# Use brightnessctl to control monitor backlight
-set $bright_up brightnessctl -n -e set +11%
-set $bright_dn brightnessctl -n -e set 11%-
-bindsym --to-code XF86MonBrightnessUp   $execnoid $bright_up
-# also known as PgUp
-bindsym --to-code KP_Prior              $execnoid $bright_up
-bindsym --to-code XF86MonBrightnessDown $execnoid $bright_dn
-# also known as PgDn
-bindsym --to-code KP_Next               $execnoid $bright_dn
-
 for_window [title="CopyQ"] floating enable
 exec copyq --start-server
 bindsym --to-code $mod+Shift+v exec copyq show
