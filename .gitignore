@@ -39,6 +39,7 @@
 # run `autorandr --save $(cat /etc/hostname)`
 /.config/autorandr/
 /.config/i3/displays.conf
+/.config/sway/config.d/99-displays.conf
 
 # meaningful excludes
 /.mozilla/
