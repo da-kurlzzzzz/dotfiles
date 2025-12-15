@@ -8,23 +8,10 @@ font pango:Monospace 8
 set $execnoid exec --no-startup-id
 
 exec copyq --start-server
-bindsym --to-code $mod+Shift+v exec copyq show
 
 # Use systemctl to hibernate and sleep
 bindsym --to-code $mod+Shift+s exec systemctl hibernate
 bindsym --to-code $mod+Shift+w exec systemctl suspend
-
-bindsym --to-code F1 exec qalculate-gtk
-# F2 is for excel
-bindsym --to-code F3 exec firefox
-bindsym --to-code F4 exec gimp --batch-interpreter plug-in-script-fu-eval -sf -b "$(cat ~/.local/bin/new-image.scm)"
-# F5 to reload in browser
-# F6 to edit address in browser
-# F8 is host key in VirtualBox
-bindsym --to-code F9 exec Telegram
-# F10 is free real estate
-# F11 cannot be imitated with Esc,number so i will not rebind it
-# F12 to open dev console in browser
 
 # Autostart starts here
 
@@ -48,9 +35,6 @@ floating_modifier $mod
 
 # start a terminal
 set $terminal alacritty
-bindsym --to-code $mod+Return exec $terminal
-bindsym --to-code $mod+Shift+Return exec rofi -show ssh
-bindsym --to-code $mod+$alt+Return exec $terminal -e zsh -c "tmux attach -t $(tmux list-sessions | grep -v attached | tail -n 1 | cut -d: -f1)"
 
 # kill focused window
 bindsym --to-code $mod+Shift+q kill
@@ -63,9 +47,6 @@ bindsym --to-code $mod+Shift+r restart
 bindsym --to-code $mod+Shift+e exit
 # lock screen (without logging out
 bindsym --to-code $mod+Shift+z exec $locker
-
-# start dmenu (a program launcher)
-bindsym --to-code $mod+d $execnoid rofi -show run
 
 # Navigation starts here
 
