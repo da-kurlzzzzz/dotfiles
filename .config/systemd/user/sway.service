@@ -9,6 +9,7 @@ Before=sway-session.target
 [Service]
 Type=notify
 NotifyAccess=all
+EnvironmentFile=-%h/.config/sway/env
 ExecStart=/usr/bin/sway
 TimeoutStopSec=10
 ExecStopPost=/usr/bin/systemctl --user unset-environment SWAYSOCK DISPLAY I3SOCK WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
