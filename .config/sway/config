@@ -1,7 +1,2 @@
-# Autostart starts here
-
-# remember per-window keyboard layout
-exec swaykbdd
-
 include /etc/sway/config.d/*
 include ~/.config/sway/config.d/*.conf
