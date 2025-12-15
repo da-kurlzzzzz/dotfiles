@@ -1,0 +1,4 @@
+# THIS FILE NEEDS TO BE ADAPTED FOR EACH AND EVERY MACHINE
+# output eDP-1 pos 0 0
+# workspace 1 output eDP-1
+# exec swaymsg workspace $ws1

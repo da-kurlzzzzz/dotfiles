@@ -6,4 +6,4 @@ exec copyq --start-server
 exec swaykbdd
 
 include /etc/sway/config.d/*
-include ~/.config/sway/config.d/*
+include ~/.config/sway/config.d/*.conf
