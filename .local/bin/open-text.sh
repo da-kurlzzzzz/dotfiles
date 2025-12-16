@@ -6,10 +6,7 @@ do
     [ -f "$f" ] || continue
     mime=$(file -Lib "$f")
     case "$mime" in
-        text/*)
-            continue
-            ;;
-        inode/x-empty*)
+        text/* | inode/x-empty* | *charset=utf-8 | *charset=*ascii)
             continue
             ;;
         *)
