@@ -46,6 +46,9 @@ REPORTTIME=
 ZLE_SPACE_SUFFIX_CHARS=$'|'
 ZLE_REMOVE_SUFFIX_CHARS=$')'
 zstyle ':completion:*' rehash true
+zstyle ':completion:*:man:*:manuals' separate-sections true
+zstyle ':completion:*:man:*:manuals.*' group-name ''
+zstyle ':completion:*:man:*:descriptions' format '%d'
 
 setopt globstarshort
 setopt nocaseglob
