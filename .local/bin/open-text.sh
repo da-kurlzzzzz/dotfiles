@@ -10,6 +10,15 @@ do
             continue
             ;;
         *)
+            if command -v handlr &>/dev/null
+            then
+                mime=$(handlr mime "$f" | tail -n 1 | cut -f2)
+                case "$mime" in
+                    text/*)
+                        continue
+                        ;;
+                esac
+            fi
             echo unsupported mime type
             echo "$f:" "$mime"
             echo maybe try xdg-open
