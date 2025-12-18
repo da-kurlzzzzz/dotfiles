@@ -47,6 +47,18 @@ _fg-ctrl-z() {
 zle -N _fg-ctrl-z
 bindkey '^z' _fg-ctrl-z
 
+_capture-last-command() {
+    if [ -z "$BUFFER" ]
+    then
+        BUFFER="vim <(!!)"
+        zle accept-line
+    else
+        LBUFFER+="\$(!!)"
+    fi
+}
+zle -N _capture-last-command
+bindkey -v '^x' _capture-last-command
+
 REPORTTIME=
 ZLE_SPACE_SUFFIX_CHARS=$'|'
 ZLE_REMOVE_SUFFIX_CHARS=$')'
