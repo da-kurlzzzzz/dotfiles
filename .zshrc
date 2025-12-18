@@ -28,11 +28,16 @@ setopt auto_pushd
 source ~/.aliasrc
 source ~/.envrc
 
-_paste-with-xclip() {
-    LBUFFER+="$(xclip -o 2>/dev/null)"
+_paste-with-gui() {
+    if [ -z "$WAYLAND_DISPLAY" ]
+    then
+        LBUFFER+="$(xclip -o 2>/dev/null)"
+    else
+        LBUFFER+="$(copyq clipboard 2>/dev/null)"
+    fi
 }
-zle -N _paste-with-xclip
-bindkey -v '^v' _paste-with-xclip
+zle -N _paste-with-gui
+bindkey -v '^v' _paste-with-gui
 
 _fg-ctrl-z() {
     zle push-input
