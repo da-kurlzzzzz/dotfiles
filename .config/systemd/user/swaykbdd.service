@@ -1,9 +1,7 @@
 [Unit]
 Description=Per-window layout switcher
 Documentation=man:swaykbdd(1)
-PartOf=sway-session.target
-Requires=sway-session.target
-After=sway-session.target
+After=graphical-session.target
 
 [Service]
 Type=exec
@@ -11,4 +9,4 @@ ExecStart=/usr/bin/swaykbdd
 Restart=always
 
 [Install]
-WantedBy=sway-session.target
+WantedBy=graphical-session.target
