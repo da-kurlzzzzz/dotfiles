@@ -61,7 +61,7 @@
 /.config/menus/
 /.anydesk/
 /.netrc
-/.config/borg/
+/.config/borg/security/
 
 # electron apps have too many things
 /.config/Code - OSS/
