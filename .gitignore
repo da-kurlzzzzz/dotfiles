@@ -51,7 +51,7 @@
 /.ssh/authorized_keys
 /.ssh/*job*
 /.ssh/passs/
-/.config/systemd/user/*.target.wants/
+/.config/systemd/user/*.*.wants/
 /.config/task/*.pem
 /.config/torbrowser/
 /.helpers/password.txt
