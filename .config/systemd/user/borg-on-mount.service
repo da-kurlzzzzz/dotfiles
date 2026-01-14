@@ -1,0 +1,12 @@
+[Unit]
+Description=Borg backups
+Documentation=man:borg(1)
+Requires=run-media-kevin-borg.mount
+After=run-media-kevin-borg.mount
+
+[Service]
+Type=exec
+ExecStart=/home/kevin/.local/bin/borg-backup.sh
+
+[Install]
+WantedBy=run-media-kevin-borg.mount
