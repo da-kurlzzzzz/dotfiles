@@ -4,7 +4,7 @@ interval=1
 command=./backup.sh
 
 [vpn]
-command=systemctl list-units --state=running "openvpn-client@*" | awk -F '[@.]' '/@/{print $2}'
+command=systemctl list-units --state=active "openvpn-client@*" "awg-quick@*" | awk -F '[@.]' '/@/{print $2}'
 
 [speed]
 command=./speed.sh
