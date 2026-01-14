@@ -5,7 +5,6 @@ default:
 	@echo be careful what you wish for
 	@echo currently documented options are
 	@echo /etc/.../filename : copies filename from rootdir
-	@echo populate : populates HOST with dotfiles via ssh
 
 MYDIR := $(HOME)/.helpers
 ROOTDIR := $(MYDIR)/rootfiles
@@ -15,26 +14,6 @@ ROOTDIR := $(MYDIR)/rootfiles
 	[ ! -d $@ ]
 	[ -d $(@D) ] || sudo mkdir -p $(@D)
 	sudo cp -r $< $@
-
-populate_files=.aliasrc .bash_profile .bashrc .config/htop/htoprc .config/ranger/rc.conf .config/ranger/rifle.conf .envrc .hushlogin .inputrc .profile .ssh/config .vim/defaults.vim .vim/keymap/russian-jcukenwin-custom.vim .vim/pack/tpope/start/sensible/plugin/sensible.vim .vim/skel/c .vim/skel/cpp .vim/skel/html .vim/skel/markdown .vim/skel/python .vim/skel/sh .vim/vimrc
-~/.cache/archive.tar: ~/.git/HEAD ~/.ranger/*
-	git archive --format=tar -o $@ HEAD
-	tar -cf $@ $(populate_files)
-	ln -sf ../../.ranger/ranger.py ~/.local/bin/ranger
-	tar -rf $@ .ranger .local/bin/ranger
-	rm ~/.local/bin/ranger
-
-~/.cache/archive.tar.gz: ~/.cache/archive.tar
-	gzip -f $<
-
-.PHONY: populate
-populate: ~/.cache/archive.tar.gz
-ifndef HOST
-	$(error usage: wish populate HOST=hostname)
-endif
-	ssh $(HOST) mkdir -p .cache
-	scp -O $< $(HOST):.cache
-	ssh $(HOST) tar -xf .cache/$(notdir $<)
 
 possible_groups := $(file < $(MYDIR)/groups)
 
