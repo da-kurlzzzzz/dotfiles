@@ -1,5 +1,8 @@
 interval=1
 
+[backup]
+command=./backup.sh
+
 [vpn]
 command=systemctl list-units --state=running "openvpn-client@*" | awk -F '[@.]' '/@/{print $2}'
 
