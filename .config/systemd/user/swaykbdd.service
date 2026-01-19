@@ -1,6 +1,7 @@
 [Unit]
 Description=Per-window layout switcher
 Documentation=man:swaykbdd(1)
+BindsTo=graphical-session.target
 After=graphical-session.target
 
 [Service]
