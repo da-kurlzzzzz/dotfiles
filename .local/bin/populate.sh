@@ -4,7 +4,7 @@ set -xeu
 
 archive=$HOME/.cache/archive.tar
 
-populate_files=(.aliasrc .bash_profile .bashrc .config/htop/htoprc .config/ranger/rc.conf .config/ranger/rifle.conf .envrc .hushlogin .inputrc .profile .ssh/config .vim/defaults.vim .vim/keymap/russian-jcukenwin-custom.vim .vim/pack/tpope/start/sensible/plugin/sensible.vim .vim/skel/c .vim/skel/cpp .vim/skel/html .vim/skel/markdown .vim/skel/python .vim/skel/sh .vim/vimrc)
+populate_files=(.aliasrc .bash_profile .bashrc .config/htop/htoprc .config/ranger/rc.conf .config/ranger/rifle.conf .envrc .hushlogin .inputrc .profile .ssh/config .vim/defaults.vim .vim/keymap/russian-jcukenwin-custom.vim .vim/pack/tpope/start/sensible/plugin/sensible.vim .vim/skel/c .vim/skel/cpp .vim/skel/html .vim/skel/markdown .vim/skel/python .vim/skel/sh .vim/vimrc .local/bin/open-text.sh)
 
 usage()
 {
