@@ -6,7 +6,7 @@
 [init]
 	defaultBranch = main
 [alias]
-	adog = log --all --decorate --oneline --graph
+	adog = "!f() { git log --all --decorate --oneline --graph --color | head -n $(( $(tput lines) - 3 )) ; }; f"
     s = status
 [merge]
 	tool = vimdiff
