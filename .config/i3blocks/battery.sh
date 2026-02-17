@@ -1,79 +1,83 @@
 #!/usr/bin/env bash
 
+#set -x
+
+tau=15
+state_file="/tmp/i3blocks_battery_state"
+
 path=/sys/class/power_supply/BAT0
 [ -d "$path" ] || exit 0
-use=$(cat $path/status)
 
-now=$(cat $path/energy_now)
-full=$(cat $path/energy_full)
-very_full=$(cat $path/energy_full_design)
+status=$(cat "$path/status")
+percent=$(awk < "$path/energy_now" -v full="$(cat "$path/energy_full")" '{printf "%.2f", $1 * 100 / full}')
 
-percent=$(awk <<< "$now $full" '{print($1 * 100 / $2)}')
-percent_nice=$(printf "%.2f" $percent)
-
-printf "%s %s" "$use" $percent_nice
-
-time_average() {
-    DATA_FILE="/tmp/battery_time_data"
-    local current_time=$(date +%s)
-    local new_value=$1
-
-    # Convert HH:MM:SS to seconds
-    local value_seconds=$(echo "$new_value" | awk -F: '{print $1*3600 + $2*60 + $3}')
-
-    # Add new measurement with timestamp
-    echo "$current_time $value_seconds" >> "$DATA_FILE"
-
-    # Calculate cutoff time (10 seconds ago)
-    local cutoff_time=$((current_time - 10))
-
-    # Process data: filter, calculate weighted average
-    local total=0
-    local total_weight=0
-    local prev_time=$cutoff_time
-    local temp_file=$(mktemp)
-
-    # Filter old entries and create temp file with recent data
-    awk -v cutoff="$cutoff_time" '$1 >= cutoff {print}' "$DATA_FILE" > "$temp_file"
-
-    # Calculate time-weighted average
-    while read -r timestamp seconds; do
-        local time_diff=$((timestamp - prev_time))
-        total=$((total + seconds * time_diff))
-        total_weight=$((total_weight + time_diff))
-        prev_time=$timestamp
-    done < "$temp_file"
-
-    # Handle remaining window (if any)
-    local remaining_time=$((current_time - prev_time))
-    if [ $remaining_time -gt 0 ]; then
-        total=$((total + value_seconds * remaining_time))
-        total_weight=$((total_weight + remaining_time))
-    fi
-
-    # Replace data file with only recent entries
-    mv "$temp_file" "$DATA_FILE"
-
-    # Calculate average (if we have data)
-    if [ $total_weight -gt 0 ]; then
-        local average_seconds=$((total / total_weight))
-        # Convert back to HH:MM:SS
-        printf "%02d:%02d:%02d\n" \
-               $((average_seconds / 3600)) \
-               $(( (average_seconds % 3600) / 60 )) \
-               $((average_seconds % 60))
+acpi_time_to_seconds() {
+    local t="$1"
+    # expects HH:MM:SS or MM:SS
+    if [[ $t =~ ^([0-9]+):([0-9]{2}):([0-9]{2})$ ]]; then
+        echo $(( 10#${BASH_REMATCH[1]} * 3600 + 10#${BASH_REMATCH[2]} * 60 + 10#${BASH_REMATCH[3]} ))
+    elif [[ $t =~ ^([0-9]+):([0-9]{2})$ ]]; then
+        echo $(( 10#${BASH_REMATCH[1]} * 60 + 10#${BASH_REMATCH[2]} ))
     else
-        echo "$new_value"  # Fallback if no data
+        echo 0
     fi
 }
 
-run_acpi() {
-    remaining=$(acpi -b | awk '{print $5}')
-    remaining=$(time_average $remaining)
-    capacity=$(acpi -i | awk 'NR == 2 {print $13}')
-    printf " ~%s" $remaining
-    printf " (%s)" $capacity
+seconds_to_hhmmss() {
+    local s=$1
+    printf "%02d:%02d:%02d" $((s/3600)) $(( (s%3600)/60 )) $((s%60))
 }
 
-command -v acpi &>/dev/null && run_acpi
+load_state() {
+    if [[ -f $state_file ]]; then
+        source "$state_file"
+    else
+        prev_time=0
+        ema=0
+        prev_status="$status"
+        prev_now=$(date +%s)
+    fi
+}
+
+save_state() {
+    cat > "$state_file" <<EOF
+prev_time=$ema
+ema=$ema
+prev_status="$status"
+prev_now=$now
+EOF
+}
+
+now=$(date +%s)
+
+raw_remaining=$(acpi -b | awk -F', ' '{print $3}' | awk '{print $1}')
+# [[ $raw_remaining ]] || exit 0
+
+seconds=$(acpi_time_to_seconds "$raw_remaining")
+
+load_state
+
+if [[ $status != "$prev_status" ]]; then
+    ema=$seconds
+else
+    dt=$((now - prev_now))
+    if (( dt < 1 )); then dt=1; fi
+
+    alpha=$(awk -v dt="$dt" -v tau="$tau" 'BEGIN {print 1 - exp(-dt / tau)}')
+    ema=$(awk -v s="$seconds" -v e="$ema" -v a="$alpha" 'BEGIN {print int(a * s + (1 - a) * e)}')
+fi
+
+printf "%s %.2f%%" "$status" "$percent"
+
+if (( ema > 60 )); then
+    printf " ~%s" "$(seconds_to_hhmmss "$ema")"
+fi
+
+capacity=$(acpi -i | awk 'NR == 2 {print $13}')
+printf " (%s)" $capacity
+
 echo
+
+save_state
+
+# vim: ft=bash
