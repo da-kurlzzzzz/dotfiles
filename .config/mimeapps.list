@@ -1,11 +1,12 @@
 [Default Applications]
+application/pdf=xreader.desktop;
+application/x-shellscript=vim.desktop;
+image/*=feh.desktop;
+inode/directory=ranger.desktop;
+text/*=vim.desktop;
+text/html=vim.desktop;firefox.desktop;
+video/*=vlc.desktop;
 x-scheme-handler/http=firefox.desktop;
 x-scheme-handler/https=firefox.desktop;
-inode/directory=ranger.desktop;
-text/html=vim.desktop;firefox.desktop;
-text/*=vim.desktop;
-application/pdf=xreader.desktop;
-image/*=feh.desktop;
 x-scheme-handler/terminal=Alacritty.desktop;
 x-scheme-handler/tonsite=org.telegram.desktop.desktop;
-application/x-shellscript=vim.desktop;
