@@ -4,7 +4,7 @@ set -x
 
 for d in $(bluetoothctl devices Paired | grep '^Device' | cut -d' ' -f2)
 do
-    if bluetoothctl info $d | grep headphones &>/dev/null
+    if bluetoothctl info $d | grep -i audio &>/dev/null
     then
         bluetoothctl -t 2 connect $d
     fi
@@ -15,7 +15,7 @@ sep=""
 for d in $(bluetoothctl devices Connected | grep '^Device' | cut -d' ' -f2)
 do
     echo $d
-    sink="bluez_output.$(tr ':' '_' <<< $d).1"
+    sink="bluez_output.$d"
     pactl set-sink-mute "$sink" false
     pactl set-sink-volume "$sink" 100%
     sinks="${sinks}${sep}${sink}"
