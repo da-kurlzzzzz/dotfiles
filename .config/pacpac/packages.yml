@@ -1,0 +1,569 @@
+pacpac_packages:
+# Base System & Hardware{{{
+  - name: base
+  - name: linux
+    machines:
+      - knight
+      - chimera
+      - molerat
+      - soldier
+    exclude-machines:
+      - halfling
+  - name: linux-firmware
+    machines:
+      - knight
+      - chimera
+      - molerat
+      - soldier
+    exclude-machines:
+      - halfling
+  - name: intel-ucode
+    machines:
+      - halfling
+      - knight
+      - chimera
+      - molerat
+      - soldier
+  - name: mesa
+    machines:
+      - halfling
+      - knight
+  - name: nvidia
+    machines:
+      - soldier
+  - name: nvidia-open
+    machines:
+      - chimera
+  - name: alsa-utils
+    needs-manual-config: unmute channels
+  - name: bluez
+    systemctl: bluetooth
+  - name: bluez-utils
+    needs-manual-config: add devices
+    optional-for: blueberry
+  - name: cups
+    systemctl: cups
+  - name: system-config-printer
+    needs-manual-config: add printers and auto configure them
+  - name: numlockx
+  - name: upower
+  - name: iwd
+    needs-manual-config: wi-fi networks
+    systemctl: iwd
+  - name: blueman
+  - name: brightnessctl
+  - name: dmidecode
+  - name: ethtool
+  - name: f2fs-tools
+  - name: grub
+  - name: hdparm
+  - name: intel-media-driver
+  - name: linux-firmware
+  - name: linux-lts
+    machines:
+      - halfling
+  - name: linux-lts-headers
+    machines:
+      - halfling
+  - name: lshw
+  - name: usbutils
+  - name: vulkan-intel
+  - name: acpi
+  - name: wol
+  - name: blueberry
+    aur: true
+  - name: mkinitcpio-firmware
+    aur: true
+  - name: rtl8821ce-dkms-git
+    aur: true
+# }}}
+# Desktop Environment & UI{{{
+  - name: xorg-server
+  - name: xorg-xinit
+  - name: xorg-xinput
+  - name: xorg-xev
+  - name: i3-wm
+  - name: dmenu
+    optional-for: i3-wm
+  - name: i3blocks
+    optional-for: i3-wm
+  - name: playerctl
+    optional-for: i3-wm
+  - name: perl-anyevent-i3
+  - name: i3lock
+    optional-for: i3-wm
+  - name: xss-lock
+    optional-for: i3-wm
+  - name: alacritty
+  - name: lxappearance
+    needs-manual-config: might add config files later
+  - name: gnome-themes-extra
+  - name: unclutter
+  - name: qt5ct
+  - name: dragon-drop
+    aur: true
+  - name: autorandr
+  - name: copyq
+  - name: grim
+  - name: pipewire
+  - name: pipewire-pulse
+  - name: qt6ct
+  - name: slurp
+  - name: sway
+  - name: sway-contrib
+  - name: swayidle
+  - name: swaylock
+  - name: wireplumber
+  - name: wmctrl
+  - name: xdg-desktop-portal-gtk
+  - name: xdg-desktop-portal-wlr
+  - name: xorg-xset
+  - name: xorg-xwayland
+  - name: xorg-xwininfo
+  - name: clipboard
+    aur: true
+  - name: easy-switcher
+    aur: true
+  - name: extramaus
+    aur: true
+  - name: gtk-theme-material-black
+    aur: true
+  - name: i3-resurrect
+    aur: true
+  - name: kbdd-git
+    aur: true
+  - name: swaykbdd
+    aur: true
+  - name: yaru-colors-gtk-theme
+    aur: true
+  - name: kanshi
+  - name: uwsm
+  - name: wayland-protocols
+  - name: xorg-xeyes
+  - name: ydotool
+  - name: tigervnc
+  - name: rofi
+  - name: anydesk-bin
+    aur: true
+# }}}
+# Fonts & Language Support{{{
+  - name: noto-fonts
+  - name: noto-fonts-cjk
+    optional-for: noto-fonts
+  - name: noto-fonts-emoji
+    optional-for: noto-fonts
+  - name: noto-fonts-extra
+    optional-for: noto-fonts
+  - name: ttf-ms-fonts
+    aur: true
+  - name: enca
+  - name: python-unidecode
+# }}}
+# Development Tools{{{
+  - name: base-devel
+    needs-manual-config: sudoers
+  - name: git
+  - name: gvim
+  - name: python
+  - name: python-pip
+    optional-for: python
+  - name: cmake
+  - name: yay
+    aur: true
+  - name: expac
+  - name: ctags
+  - name: logisim
+    aur: true
+  - name: gnuplot
+  - name: devtools
+  - name: arch-install-scripts
+  - name: archiso
+  - name: virtualbox
+    needs-manual-config: create boxes
+  - name: virtualbox-host-modules-lts
+    machines:
+      - halfling
+  - name: sqlite
+  - name: sqlite-doc
+    optional-for: sqlite
+  - name: gdb
+  - name: sdl3
+  - name: sdl2-compat
+  - name: sdl2_image
+  - name: sdl2_gfx
+  - name: sdl2_net
+  - name: sdl2_mixer
+  - name: sdl2_ttf
+  - name: nlohmann-json
+  - name: cpp-httplib
+    aur: true
+  - name: uthash
+  - name: valgrind
+  - name: utf8cpp
+  - name: cjson
+  - name: code
+  - name: gcovr
+  - name: lcov
+  - name: libqmi
+  - name: meson
+  - name: npm
+  - name: perf
+  - name: php
+  - name: sdl2-compat
+  - name: sfml
+  - name: clion
+    aur: true
+  - name: clion-cmake
+    aur: true
+  - name: clion-gdb
+    aur: true
+  - name: clion-lldb
+    aur: true
+  - name: emmet-vim-git
+    aur: true
+  - name: include-what-you-use
+    aur: true
+  - name: shc
+    aur: true
+  - name: vim-mesonic-git
+    aur: true
+  - name: clang
+  - name: python-matplotlib
+  - name: tk
+  - name: vim-ansiesc
+    aur: true
+  - name: vim-sensible
+    aur: true
+  - name: lxc
+  - name: mariadb
+  - name: ollama
+  - name: postgresql
+  - name: postgresql-old-upgrade
+  - name: pycharm-community-edition
+  - name: qemu-base
+  - name: qemu-desktop
+  - name: arch-wiki-docs
+  - name: asciidoc
+  - name: python-aiorpcx
+  - name: python-pyfuse3
+  - name: qemu-full
+  - name: diffuse
+  - name: upx
+  - name: ddd
+    aur: true
+# }}}
+# System Utilities{{{
+  - name: htop
+  - name: strace
+    optional-for: htop
+  - name: nethogs
+    needs-manual-config: setcap as described in manual
+  - name: ranger
+  - name: xclip
+  - name: ascii
+  - name: gucharmap
+  - name: man-db
+  - name: man-pages
+  - name: texi2html
+  - name: tldr
+  - name: time
+  - name: wget
+  - name: yq
+  - name: pacman-contrib
+  - name: reflector
+    systemctl: reflector
+  - name: downgrade
+    aur: true
+  - name: xdotool
+  - name: lostfiles
+  - name: pkgstats
+  - name: speedtest-cli
+  - name: qalculate-gtk
+  - name: binwalk
+  - name: handlr-regex
+  - name: lsof
+  - name: pacutils
+  - name: pv
+  - name: stress
+  - name: syslinux
+  - name: systemd-resolvconf
+  - name: pinfo
+    aur: true
+  - name: xdg-utils-handlr
+    aur: true
+  - name: rtkit
+  - name: gnome-keyring
+  - name: inxi
+  - name: polkit-gnome
+  - name: tlp
+# }}}
+# Shell & Terminal{{{
+  - name: zsh
+  - name: zsh-vi-mode-git
+    optional-for: zsh
+    aur: true
+  - name: pkgfile
+    optional-for: zsh
+  - name: tmux
+    needs-manual-config: prefix+I to install all
+  - name: lynx
+  - name: cmatrix
+  - name: neofetch
+  - name: onefetch
+  - name: tty-clock
+    aur: true
+  - name: screenkey
+  - name: bash-completion
+  - name: beep
+  - name: expect
+  - name: moreutils
+  - name: shellcheck
+  - name: tree
+  - name: unzip
+  - name: zsh-autosuggestions
+  - name: zsh-completions
+  - name: tmux-resurrect
+    aur: true
+# }}}
+# Media & Graphics{{{
+  - name: feh
+  - name: gimp
+  - name: imagemagick
+  - name: img2pdf
+  - name: tesseract
+  - name: tesseract-data-eng
+    optional-for: tesseract
+  - name: tesseract-data-rus
+    optional-for: tesseract
+  - name: digikam
+  - name: vlc
+  - name: vlc-plugins-all
+  - name: mpv
+  - name: yt-dlp
+    optional-for: mpv
+  - name: obs-studio
+  - name: openshot
+    aur: true
+  - name: hypnotix
+    aur: true
+  - name: mkvtoolnix-cli
+  - name: libreoffice-still
+  - name: xreader
+  - name: djvulibre
+    optional-for: xreader
+  - name: pandoc-cli
+  - name: python-weasyprint
+    optional-for: pandoc-cli
+  - name: translate-shell
+  - name: steam
+    machines:
+      - chimera
+  - name: rogue
+  - name: pekka-kana-2
+    aur: true
+  - name: gtypist
+    aur: true
+  - name: typespeed
+  - name: dwarffortress
+  - name: moonlight-qt
+  - name: wine
+  - name: wine-mono
+  - name: steam
+  - name: wine-gecko
+  - name: winetricks
+  - name: obsidian
+  - name: prusa-slicer
+  - name: youtube
+    aur: true
+  - name: graphviz
+  - name: gnuclad
+    aur: true
+  - name: yed
+    aur: true
+  - name: cheese
+    aur: true
+# }}}
+# Internet & Communication{{{
+  - name: firefox
+    needs-manual-config: log into firefox account and set theme
+  - name: telegram-desktop
+    needs-manual-config: log into account
+  - name: whatsapp-nativefier
+    needs-manual-config: log into account
+    aur: true
+  - name: discord
+    needs-manual-config: log into account
+  - name: betterdiscord-installer
+    needs-manual-config: go through installation
+    optional-for: discord
+    aur: true
+  - name: vk-messenger-bin
+    needs-manual-config: log into account
+    aur: true
+  - name: zoom
+    needs-manual-config: log into account
+    aur: true
+  - name: chromium
+  - name: skypeforlinux-bin
+    aur: true
+# }}}
+# Security & Privacy{{{
+  - name: tor
+    systemctl: tor
+  - name: torsocks
+    optional-for: tor
+  - name: torbrowser-launcher
+  - name: openssh
+    systemctl: sshd
+  - name: electrum
+  - name: wireguard-tools
+  - name: amneziawg-dkms
+    aur: true
+  - name: amneziawg-tools
+    aur: true
+  - name: openvpn-hidemyname
+    aur: true
+  - name: openvpn
+  - name: amneziavpn-bin
+    aur: true
+  - name: trivy
+# }}}
+# Storage & Backup{{{
+  - name: timeshift
+    aur: true
+    systemctl: cronie
+    needs-manual-config: go through initial wizard
+  - name: syncthing
+    needs-manual-config: too much hassle to backup so init everything manually
+  - name: rsync
+  - name: rclone
+    needs-manual-config: might add config file later
+  - name: 7zip
+  - name: ntfs-3g
+  - name: ventoy-bin
+    aur: true
+  - name: czkawka-cli-bin
+    aur: true
+  - name: dosfstools
+    optional-for: gparted
+  - name: exfatprogs
+    optional-for: gparted
+  - name: mtools
+    optional-for: gparted
+  - name: udiskie
+  - name: smartmontools
+  - name: xfsprogs
+  - name: borg
+# }}}
+# Mobile & Device Support{{{
+  - name: scrcpy
+  - name: droidcam
+    needs-manual-config: a bit of a hassle, might document it later
+    aur: true
+  - name: v4l2loopback-dkms
+    optional-for: droidcam
+  - name: linux-headers
+    machines:
+      - knight
+      - chimera
+      - molerat
+      - soldier
+    exclude-machines:
+      - halfling
+    optional-for: droidcam
+  - name: android-tools
+    optional-for: droidcam
+  - name: gvfs-mtp
+    optional-for: droidcam
+  - name: ifuse
+  - name: jmtpfs
+    aur: true
+  - name: v4l2loopback-dc-dkms
+    aur: true
+  - name: guvcview
+# }}}
+# Server & Network Tools{{{
+  - name: nginx-mainline
+    needs-manual-config: run make from the odin project to replace config file
+  - name: certbot-nginx
+    needs-manual-config: add https manually
+    optional-for: nginx-mainline
+  - name: nmap
+  - name: openbsd-netcat
+  - name: transmission-cli
+    systemctl: transmission
+  - name: fping
+  - name: ipcalc
+  - name: multipath-tools
+  - name: nfs-utils
+  - name: tcpdump
+  - name: traceroute
+  - name: arp-scan
+  - name: bind
+  - name: cloudflared
+  - name: inetutils
+  - name: iperf
+  - name: iperf3
+  - name: monitoring-plugins
+  - name: netsniff-ng
+  - name: net-tools
+  - name: nload
+  - name: nrpe
+  - name: rp-pppoe
+  - name: sshpass
+  - name: sshuttle
+  - name: termshark
+  - name: whois
+  - name: i2util
+    aur: true
+  - name: ifmetric
+    aur: true
+  - name: nuttcp
+    aur: true
+  - name: wondershaper-git
+    aur: true
+  - name: aircrack-ng
+  - name: dnsmasq
+  - name: wireshark-cli
+  - name: wireshark-qt
+  - name: linux-wifi-hotspot
+    aur: true
+  - name: networkd-dispatcher
+    aur: true
+  - name: zapret-git
+    aur: true
+  - name: ansible
+  - name: docker
+  - name: docker-compose
+  - name: podman
+  - name: icinga2
+    aur: true
+  - name: ppp
+  - name: ettercap
+  - name: kismet
+  - name: pptpclient
+# }}}
+# Sysadmin Tools{{{
+  - name: apt
+  - name: cpio
+  - name: picocom
+  - name: smbclient
+  - name: debian-archive-keyring
+  - name: debootstrap
+  - name: dropbear
+  - name: lighttpd
+  - name: logrotate
+  - name: rpm-tools
+  - name: debhelper
+    aur: true
+  - name: devscripts
+    aur: true
+  - name: dh-autoreconf
+    aur: true
+  - name: dh-exec
+    aur: true
+  - name: dh-make
+    aur: true
+  - name: equivs-git
+    aur: true
+# }}}
