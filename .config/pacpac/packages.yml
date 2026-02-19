@@ -309,6 +309,7 @@ pacpac_packages:
   - name: lynx
   - name: cmatrix
   - name: neofetch
+    aur: true
   - name: onefetch
   - name: tty-clock
     aur: true
