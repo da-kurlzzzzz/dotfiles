@@ -360,11 +360,13 @@ pacpac_packages:
     machines:
       - chimera
   - name: rogue
+    aur: true
   - name: pekka-kana-2
     aur: true
   - name: gtypist
     aur: true
   - name: typespeed
+    aur: true
   - name: dwarffortress
   - name: moonlight-qt
   - name: wine
@@ -431,7 +433,6 @@ pacpac_packages:
 # }}}
 # Storage & Backup{{{
   - name: timeshift
-    aur: true
     systemctl: cronie
     needs-manual-config: go through initial wizard
   - name: syncthing
