@@ -28,9 +28,10 @@ pacpac_packages:
     machines:
       - halfling
       - knight
-  - name: nvidia
+  - name: nvidia-390xx-dkms
     machines:
       - soldier
+    aur: true
   - name: nvidia-open
     machines:
       - chimera
