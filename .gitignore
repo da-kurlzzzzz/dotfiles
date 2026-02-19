@@ -43,6 +43,7 @@
 
 # meaningful excludes
 /.mozilla/
+/.config/mozilla/
 /.gnupg/
 /.steam*
 /.pki/
