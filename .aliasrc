@@ -59,7 +59,7 @@ alias pico='picocom -b 115200 /dev/ttyUSB0'
 alias prsync='rsync -Rah --append --info=PROGRESS2'
 alias lsblks='lsblk -o name,pttype,fstype,fsver,label,size,fssize,fsused,fsavail,fsuse%,mountpoints'
 alias lib-miss-old='unset REPORTTIME; sudo lsof 2>/dev/null +c 0 | grep "DEL.*lib" | awk "1 { print \$1 \": \" \$NF }" | sort -u; REPORTTIME='
-alias lib-miss='unset REPORTTIME; sudo find /proc -maxdepth 2 -name maps -exec grep -HE "/usr/.*\(deleted\)" {} \; | cut -d/ -f3 | sort -u | xargs --no-run-if-empty ps; REPORTTIME='
+alias lib-miss='unset REPORTTIME; sudo find /proc -maxdepth 2 -name maps -exec grep -HE "/usr/.*\(deleted\)" {} \; | cut -d/ -f3 | sort -u | xargs --no-run-if-empty ps -o pid,user,command; REPORTTIME='
 
 # colors
 alias diff='diff --color=auto'
