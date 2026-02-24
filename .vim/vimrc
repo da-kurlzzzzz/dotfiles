@@ -138,10 +138,13 @@ set foldmethod=marker
 
 " auto braces
 inoremap { {}<esc>i
+inoremap <expr> } getline('.')[col('.')-1] == "}" ? "\<esc>la" : "}"
 inoremap ( ()<esc>i
+inoremap <expr> ) getline('.')[col('.')-1] == ")" ? "\<esc>la" : ")"
 inoremap [ []<esc>i
-inoremap ' ''<esc>i
-inoremap " ""<esc>i
+inoremap <expr> ] getline('.')[col('.')-1] == "]" ? "\<esc>la" : "]"
+inoremap <expr> ' getline('.')[col('.')-1] == "'" ? "\<esc>la" : "''\<esc>i"
+inoremap <expr> " getline('.')[col('.')-1] == '"' ? "\<esc>la" : "\"\"\<esc>i"
 
 function! s:SmartEnter()
     let line = getline('.')
