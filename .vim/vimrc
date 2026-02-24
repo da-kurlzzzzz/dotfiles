@@ -196,3 +196,4 @@ let g:ale_linters_ignore = {
 
 let g:ollama_enabled = 0
 inoremap <C-E> <Plug>(ollama-trigger-completion)
+vnoremap <C-E> <Plug>(ollama-edit)
