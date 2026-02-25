@@ -34,6 +34,7 @@
 /.i3/i3-resurrect/
 /.ranger/
 /.tmux/resurrect/
+/.config/sway/another-swayrst-profiles/
 
 # local multiple display setup
 # run `autorandr --save $(cat /etc/hostname)`
