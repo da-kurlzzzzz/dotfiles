@@ -1,0 +1,5 @@
+default partial alphanumeric_keys
+xkb_symbols "basic" {
+    include "ru"
+    key <AE03> { [ 3, numbersign ] };
+};
