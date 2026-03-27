@@ -60,6 +60,7 @@ set background=dark
 " tricks for showing indents. spaces are handled by indentLine plugin
 set list listchars=tab:\¦\ 
 highlight SpecialKey ctermfg=DarkGray
+let g:indentLine_concealcursor = ""
 
 nnoremap <SPACE> <Nop>
 let mapleader=" "
