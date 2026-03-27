@@ -5,7 +5,7 @@ state_file="/tmp/i3blocks_speed_state"
 
 check_iface() {
     new_iface=$(ip route get 8.8.8.8 | sed -E 's/.*dev (\S*).*/\1/;q')
-    [ $new_iface = $iface ]
+    [ "$new_iface" = "$iface" ]
 }
 
 reset_configs() {
