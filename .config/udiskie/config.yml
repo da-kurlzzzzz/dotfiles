@@ -3,3 +3,6 @@ device_config:
     ignore: true
   - id_label: borg
     ignore: false
+
+program_options:
+  notify: false
