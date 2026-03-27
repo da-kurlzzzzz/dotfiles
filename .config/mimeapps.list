@@ -8,5 +8,5 @@ text/html=vim.desktop;firefox.desktop;
 video/*=vlc.desktop;
 x-scheme-handler/http=firefox.desktop;
 x-scheme-handler/https=firefox.desktop;
-x-scheme-handler/terminal=Alacritty.desktop;
+x-scheme-handler/terminal=foot.desktop;
 x-scheme-handler/tonsite=org.telegram.desktop.desktop;
