@@ -59,6 +59,7 @@ alias pico='picocom -b 115200 /dev/ttyUSB0'
 alias prsync='rsync -Rah --append --info=PROGRESS2'
 alias lsblks='lsblk -o name,pttype,fstype,fsver,label,size,fssize,fsused,fsavail,fsuse%,mountpoints'
 alias lib-miss='unset REPORTTIME; sudo find /proc -maxdepth 2 -name maps -exec grep -HE "/usr/.*\(deleted\)" {} \; | cut -d/ -f3 | sort -u | xargs --no-run-if-empty ps -o pid,user,command; REPORTTIME='
+alias man='MANWIDTH=$(( c = $(tput cols), m = 119, c < m ? c : m )) man'
 
 # colors
 alias diff='diff --color=auto'
