@@ -32,6 +32,10 @@ handle_mime() {
             else
                 image2text --width="${PV_WIDTH}" && exit 0
             fi
+            ;;
+        application/x-wine-extension-ini)
+            exit 2
+            ;;
             ## end of custom section
     esac
 }
