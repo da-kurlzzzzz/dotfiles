@@ -31,6 +31,7 @@
 /.config/transmission-daemon/stats.json
 /.config/transmission-daemon/dht.dat
 /.config/transmission-daemon/bandwidth-groups.json
+/.config/transmission-daemon/queue.json
 /.i3/i3-resurrect/
 /.ranger/
 /.tmux/resurrect/
