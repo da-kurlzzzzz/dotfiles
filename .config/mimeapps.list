@@ -1,5 +1,5 @@
 [Default Applications]
-application/pdf=xreader.desktop;
+application/pdf=org.kde.okular.desktop;
 application/x-shellscript=vim.desktop;
 image/*=feh.desktop;
 inode/directory=ranger.desktop;
