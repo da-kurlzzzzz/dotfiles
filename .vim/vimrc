@@ -13,6 +13,8 @@ nnoremap Y y$
 set whichwrap=b,s,h,l,<,>,~,[,]
 set number relativenumber
 set hlsearch
+set shortmess-=S
+set maxsearchcount=9999
 " this just feels more natural
 set splitbelow splitright
 
