@@ -77,6 +77,7 @@ pacpac_packages:
     aur: true
   - name: rtl8821ce-dkms-git
     aur: true
+  - name: fwupd
 # }}}
 # Desktop Environment & UI{{{
   - name: xorg-server
@@ -96,8 +97,10 @@ pacpac_packages:
   - name: xss-lock
     optional-for: i3-wm
   - name: alacritty
+  - name: foot
   - name: lxappearance
     needs-manual-config: might add config files later
+  - name: nwg-look
   - name: gnome-themes-extra
   - name: unclutter
   - name: qt5ct
@@ -143,6 +146,9 @@ pacpac_packages:
   - name: xorg-xeyes
   - name: ydotool
   - name: tigervnc
+  - name: wayvnc
+  - name: remmina
+  - name: freerdp
   - name: rofi
   - name: anydesk-bin
     aur: true
@@ -179,6 +185,8 @@ pacpac_packages:
   - name: devtools
   - name: arch-install-scripts
   - name: archiso
+  - name: mkosi
+  - name: archlinux-contrib
   - name: virtualbox
     needs-manual-config: create boxes
   - name: virtualbox-host-modules-lts
@@ -235,6 +243,7 @@ pacpac_packages:
     aur: true
   - name: vim-sensible
     aur: true
+  - name: vim-ale
   - name: lxc
   - name: mariadb
   - name: ollama
@@ -248,6 +257,7 @@ pacpac_packages:
   - name: python-aiorpcx
   - name: python-pyfuse3
   - name: qemu-full
+  - name: uboot-tools
   - name: diffuse
   - name: upx
   - name: ddd
@@ -297,6 +307,7 @@ pacpac_packages:
   - name: inxi
   - name: polkit-gnome
   - name: tlp
+  - name: inotify-tools
 # }}}
 # Shell & Terminal{{{
   - name: zsh
@@ -320,12 +331,14 @@ pacpac_packages:
   - name: expect
   - name: moreutils
   - name: shellcheck
+  - name: shfmt
   - name: tree
   - name: unzip
   - name: zsh-autosuggestions
   - name: zsh-completions
   - name: tmux-resurrect
     aur: true
+  - name: task
 # }}}
 # Media & Graphics{{{
   - name: feh
@@ -353,6 +366,7 @@ pacpac_packages:
   - name: xreader
   - name: djvulibre
     optional-for: xreader
+  - name: okular
   - name: pandoc-cli
   - name: python-weasyprint
     optional-for: pandoc-cli
@@ -392,6 +406,7 @@ pacpac_packages:
     needs-manual-config: log into firefox account and set theme
   - name: telegram-desktop
     needs-manual-config: log into account
+  - name: element-desktop
   - name: whatsapp-nativefier
     needs-manual-config: log into account
     aur: true
@@ -493,6 +508,7 @@ pacpac_packages:
     optional-for: nginx-mainline
   - name: nmap
   - name: openbsd-netcat
+  - name: websocat
   - name: transmission-cli
     systemctl: transmission
   - name: fping
