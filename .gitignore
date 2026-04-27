@@ -9,6 +9,8 @@
 /.local/include/
 /.tox/
 /.fltk/
+/.freeipmi/sdr-cache/
+/.parallel/tmp/
 
 # all history files
 *_history
@@ -90,6 +92,9 @@
 /.config/qt6ct/
 /.config/digikamrc
 /.openshot_qt/
+/.vmware/
+/.config/okularpartrc
+/.config/okularrc
 
 # i probably won't add those
 /.irssi/
