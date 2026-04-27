@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# /usr/local/bin/notify-send
+# Logs notification to systemd journal instead of dbus
+
+# Remove common notify-send flags we don't need
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        -u|--urgency|-t|--expire-time|-i|--icon|-c|--category|-h|--hint|-a|--app-name)
+            shift 2 ;;
+        --print-id|--replace-id|--transient)
+            shift ;;
+        -*)
+            shift ;;
+        *)
+            break ;;
+    esac
+done
+
+# Remaining arguments are usually: [summary] [body]
+if [[ $# -eq 0 ]]; then
+    exit 0
+elif [[ $# -eq 1 ]]; then
+    summary="$1"
+    body=""
+else
+    summary="$1"
+    body="${*:2}"
+fi
+
+# Log to journal
+systemd-cat -t notify-send -p info -- \
+    printf '%s\n%s\n' "$summary" "$body"
