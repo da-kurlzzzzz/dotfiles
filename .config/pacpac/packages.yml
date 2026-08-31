@@ -524,10 +524,12 @@ pacpac_packages:
   - name: iperf
   - name: iperf3
   - name: monitoring-plugins
+    aur: true
   - name: netsniff-ng
   - name: net-tools
   - name: nload
   - name: nrpe
+    aur: true
   - name: rp-pppoe
   - name: sshpass
   - name: sshuttle
