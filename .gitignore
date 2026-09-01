@@ -67,7 +67,9 @@
 /.anydesk/
 /.netrc
 /.config/borg/security/
+/.thunderbird/
 /.MSGViewer/
+/.ansible/
 /.1C/
 /.1cv8/
 /.config/yandex-browser/
@@ -101,6 +103,9 @@
 /.vmware/
 /.config/okularpartrc
 /.config/okularrc
+/.config/keepassxc/
+/.config/btop/
+/.config/dunst/
 
 # i probably won't add those
 /.irssi/
@@ -151,4 +156,9 @@
 /.docker/
 /.config/wireshark/
 /.config/termshark/
+/.config/kdeglobals
+/.config/kdenliverc
+/.config/videomass/
+/.config/LibreCAD/
 /.config/fyne/
+/.config/freerdp/
