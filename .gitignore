@@ -67,12 +67,18 @@
 /.anydesk/
 /.netrc
 /.config/borg/security/
+/.MSGViewer/
+/.1C/
+/.1cv8/
+/.config/yandex-browser/
 
 # electron apps have too many things
 /.config/Code - OSS/
 /.config/Cursor/
 /.config/obsidian/
 /.config/Youtube/
+/.config/Rocket.Chat/
+/.config/draw.io/
 
 # TODO check my own executables
 /.local/bin/pip*
@@ -145,3 +151,4 @@
 /.docker/
 /.config/wireshark/
 /.config/termshark/
+/.config/fyne/
