@@ -11,6 +11,7 @@
 /.fltk/
 /.freeipmi/sdr-cache/
 /.parallel/tmp/
+/.nv/
 
 # all history files
 *_history
@@ -73,6 +74,8 @@
 /.1C/
 /.1cv8/
 /.config/yandex-browser/
+/.heroic-wine/
+/.klei/
 
 # electron apps have too many things
 /.config/Code - OSS/
@@ -81,6 +84,7 @@
 /.config/Youtube/
 /.config/Rocket.Chat/
 /.config/draw.io/
+/.config/comfyui-desktop-2/
 
 # TODO check my own executables
 /.local/bin/pip*
@@ -106,6 +110,9 @@
 /.config/keepassxc/
 /.config/btop/
 /.config/dunst/
+/.config/opencode/
+/.config/lamco-rdp-server/
+/.config/gtk-2.0/gtkfilechooser.ini
 
 # i probably won't add those
 /.irssi/
@@ -162,3 +169,7 @@
 /.config/LibreCAD/
 /.config/fyne/
 /.config/freerdp/
+/.config/sqlit/
+/.config/PrusaSlicer/
+/.config/OrcaSlicer/
+/.config/gtk-3.0/bookmarks
