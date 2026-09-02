@@ -3,8 +3,8 @@ Description=A VNC server for wlroots based Wayland compositors inside user login
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/wayvnc
-Restart=on-failure
+ExecStart=/usr/bin/wayvnc -g
+Restart=always
 RestartSec=1
 TimeoutStopSec=10
 
