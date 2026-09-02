@@ -1,0 +1,13 @@
+[Unit]
+Description=Force sway to use single output upon VNC connection
+BindsTo=graphical-session.target
+After=graphical-session.target
+Requires=wayvnc.service
+After=wayvnc.service
+
+[Service]
+Type=exec
+ExecStart=/home/kevin/.local/bin/single-output-sway
+
+[Install]
+WantedBy=graphical-session.target
