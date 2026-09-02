@@ -10,3 +10,4 @@ x-scheme-handler/http=firefox.desktop;
 x-scheme-handler/https=firefox.desktop;
 x-scheme-handler/terminal=foot.desktop;
 x-scheme-handler/tonsite=org.telegram.desktop.desktop;
+model/3mf=OrcaSlicer.desktop;
