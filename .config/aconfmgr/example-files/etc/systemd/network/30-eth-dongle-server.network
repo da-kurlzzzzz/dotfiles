@@ -1,0 +1,14 @@
+[Match]
+Name=enx00e04c680b06
+
+[Network]
+DHCPServer=yes
+IPv4Forwarding=yes
+IPMasquerade=ipv4
+
+[Link]
+RequiredForOnline=no
+ActivationPolicy=manual
+
+[DHCPServer]
+ServerAddress=192.168.2.1/24

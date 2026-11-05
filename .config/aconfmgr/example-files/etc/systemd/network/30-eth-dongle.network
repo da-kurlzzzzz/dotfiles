@@ -1,0 +1,8 @@
+[Match]
+Name=enx00e04c680b06
+
+[Link]
+ActivationPolicy=manual
+
+[Network]
+DHCP=yes

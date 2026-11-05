@@ -3,3 +3,4 @@ Name=tun*
 
 [Link]
 Unmanaged=true
+#ActivationPolicy=manual
