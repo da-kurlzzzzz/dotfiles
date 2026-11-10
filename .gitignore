@@ -39,6 +39,7 @@
 /.ranger/
 /.tmux/resurrect/
 /.config/sway/another-swayrst-profiles/
+/.config/libaccounts-glib/accounts.db
 
 # local multiple display setup
 # run `autorandr --save $(cat /etc/hostname)`
