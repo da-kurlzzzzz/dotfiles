@@ -14,8 +14,8 @@ sinks=""
 sep=""
 for d in $(bluetoothctl <<< "devices Connected" | grep '^Device' | cut -d' ' -f2)
 do
-    echo "$d"
-    sink="bluez_output.$d"
+    sink="bluez_output.${d//:/_}.1"
+    echo "$sink"
     pactl set-sink-mute "$sink" false
     pactl set-sink-volume "$sink" 100%
     sinks="${sinks}${sep}${sink}"
