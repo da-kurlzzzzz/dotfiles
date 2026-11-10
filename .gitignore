@@ -77,6 +77,7 @@
 /.config/yandex-browser/
 /.heroic-wine/
 /.klei/
+/.config/browsh/firefox_profile/
 
 # electron apps have too many things
 /.config/Code - OSS/
@@ -114,6 +115,7 @@
 /.config/opencode/
 /.config/lamco-rdp-server/
 /.config/gtk-2.0/gtkfilechooser.ini
+/.config/browsh/config.toml
 
 # i probably won't add those
 /.irssi/
